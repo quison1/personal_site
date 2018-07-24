@@ -5,4 +5,4 @@ output:
     theme: united
 ---
 
-A lazy person, and geeky. 
+A lazy person.

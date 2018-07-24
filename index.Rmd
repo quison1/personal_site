@@ -1,5 +1,5 @@
 ---
-title: "William's Website"
+title: "Home"
 output:
   html_document:
     toc: true
@@ -29,7 +29,7 @@ Serve 1.
   -	30 g Parmesan cheese
 
 ### Method
-1. Cook the pasta in a pan of boiling salted water according to the packet instructions, then drain, reserving a mugful of cooking water. Meanwhile, squeeze the sausage meat out of the skins, then, with wet hands, quickly shape into 18 even-sized balls. Roll and coat them in black pepper, then cook in a non- stick frying pan on a medium heat with ½ a tablespoon of olive oil until golden and cooked through, tossing regularly, then turn the heat off.
+1. Cook the pasta in a pan of boiling salted water according to the packet instructions, then drain, reserving a mugful of cooking water. Meanwhile, squeeze the sausage meat out of the skins, then, with wet hands, quickly shape into 18 even-sized balls. Roll and coat them in black pepper, then cook in a non- stick frying pan on a medium heat with 1/2 a tablespoon of olive oil until golden and cooked through, tossing regularly, then turn the heat off.
 
 2. Finely chop the parsley, stalks and all, beat it with the egg and a splash of pasta cooking water, then finely grate and mix in most of the Parmesan.
 
@@ -39,7 +39,7 @@ Serve 1.
 
 Jamie Oliver 5 Ingredients
 
-https://www.youtube.com/watch?v=sEkUvKYC_Uk&t=891s
+2018. Replace the cheating Bolognese from the original 3 (2011-2013).
 
 
 <a href="#top">Back to top</a>
@@ -77,6 +77,8 @@ https://www.youtube.com/watch?v=sEkUvKYC_Uk&t=891s
 ### Source
 http://rasamalaysia.com/three-cups-chicken-recipe/2/
 
+Part of the original 3 (2011-2013). Inherited from a friend, Ming.
+
 <a href="#top">Back to top</a>
 
 ***
@@ -113,11 +115,13 @@ http://rasamalaysia.com/three-cups-chicken-recipe/2/
 
 http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/
 
+Part of the original 3 (2011-2013). Inherited from a friend, Ming.
+
 <a href="#top">Back to top</a>
 
 ***
 
-### Ginger and shallot chicken, beef or fish
+## Ginger and shallot chicken, beef or fish
 
 ### Ingredients
   -	8 oz beef flap meat, beef tenderloin or beef flank steak, sliced
@@ -144,9 +148,45 @@ http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/
 ### Source
 http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/
 
+First venture. 2015.
+
 <a href="#top">Back to top</a>
 
 ***
+
+## Creamy Peri-peri chicken pasta (fettuccini)
+
+```{r, out.width="100%", fig.align='center'}
+include_graphics("images//test.jpg")
+```
+
+Serve 4.
+
+### Ingredients
+-	5 tsp Olive oil
+-	1 Red onion, peeled, halved and sliced
+-	2 Garlic cloves, crushed
+-	500g Chicken fillets, thinly sliced
+-	1/3 Cup (60ml) Nando's PERi-PERi Sauce
+-	1 Cup (250ml) cream
+-	250g Oven-roasted cherry tomatoes
+-	Salt and freshly milled black pepper
+-	500g Cooked pasta, such as, fettuccini, tagliatelle or papparadelle
+
+### Directions
+1.	Heat the oil in a wok or wide frying pan. Add the onion and fry for 3-4 minutes. Stir in the garlic and fry for 1 minute. 
+2.	Add the chicken strips and stir fry on a high heat, for 3-5 minutes, to brown the chicken.
+3.	Stir in the Nando's PERi-PERi sauce and simmer for 1 minute, to reduce slightly.
+4.	Stir in the cream and oven-roasted tomatoes and simmer for 5 minutes. Season with salt and pepper.
+5.	Ladle over pasta and serve.
+
+### Source
+
+http://www.nandos.com.au/recipes/recipe/detail?id=1128
+
+A friend's R birthday at 2016.
+
+<a href="#top">Back to top</a>
 
 ## Ying's Emperor chicken rice
 
@@ -154,7 +194,7 @@ Serve 4.
 
 ### Rice
   -	4-small cup Jasmin rice
-  -	Handful of black bean (optional)
+  -	A handful of black bean (optional)
 
 ### Chicken and marinade
   -	500g chicken thigh fillet (diced into 2cm cubes)
@@ -183,40 +223,15 @@ Serve 4.
 
 ### Source
 
-A friend. Ying.
+A friend. Ying. Housewarming at 2017.
 
 <a href="#top">Back to top</a>
 
 ***
 
-## Creamy Peri-peri chicken pasta (fettuccini)
+## To do list
 
-```{r, out.width="100%", fig.align='center'}
-include_graphics("images//test.jpg")
-```
-
-Serve 4.
-
-### Ingredients
--	5 tsp Olive oil
--	1 Red onion, peeled, halved and sliced
--	2 Garlic cloves, crushed
--	500g Chicken fillets, thinly sliced
--	1/3 Cup (60ml) Nando’s PERi-PERi Sauce
--	1 Cup (250ml) cream
--	250g Oven-roasted cherry tomatoes
--	Salt and freshly milled black pepper
--	500g Cooked pasta, such as, fettuccini, tagliatelle or papparadelle
-
-### Directions
-1.	Heat the oil in a wok or wide frying pan. Add the onion and fry for 3-4 minutes. Stir in the garlic and fry for 1 minute. 
-2.	Add the chicken strips and stir fry on a high heat, for 3-5 minutes, to brown the chicken.
-3.	Stir in the Nando’s PERi-PERi sauce and simmer for 1 minute, to reduce slightly.
-4.	Stir in the cream and oven-roasted tomatoes and simmer for 5 minutes. Season with salt and pepper.
-5.	Ladle over pasta and serve.
-
-### Source
-
-http://www.nandos.com.au/recipes/recipe/detail?id=1128
-
-<a href="#top">Back to top</a>
+1. Update the serving size and change the quantity unit to metric system.
+2. 2018 dish - Ginger beef
+    - https://www.hellofresh.com.au/recipes/ginger-beef-stir-fry-5786ed37b2baafc45b8b4568
+3. 2018 dish
