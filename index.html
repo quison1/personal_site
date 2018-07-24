@@ -15,10 +15,13 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -163,6 +166,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -203,9 +301,13 @@ $(document).ready(function () {
 </div>
 
 
+<div id="personal-recipe-repository" class="section level1">
+<h1>Personal recipe repository</h1>
+<p>A quick compilation of my favour recipes. Sourced from various places. No copyright infringement intended.</p>
+<hr />
 <div id="easy-sausage-carbonara" class="section level2">
 <h2>Easy sausage carbonara</h2>
-<p><img src="images/test.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>Serve 1.</p>
 <div id="ingredients" class="section level3">
 <h3>Ingredients</h3>
 <ul>
@@ -219,31 +321,239 @@ $(document).ready(function () {
 <div id="method" class="section level3">
 <h3>Method</h3>
 <ol style="list-style-type: decimal">
-<li><p>Cook the pasta in a pan of boiling salted water according to the packet instructions, then drain, reserving a mugful of cooking water. Meanwhile, squeeze the sausage meat out of the skins, then, with wet hands, quickly shape into 18 even-sized balls. Roll and coat them in black pepper, then cook in a non- stick frying pan on a medium heat with ½ a tablespoon of olive oil until golden and cooked through, tossing regularly, then turn the heat off.</p></li>
+<li><p>Cook the pasta in a pan of boiling salted water according to the packet instructions, then drain, reserving a mugful of cooking water. Meanwhile, squeeze the sausage meat out of the skins, then, with wet hands, quickly shape into 18 even-sized balls. Roll and coat them in black pepper, then cook in a non- stick frying pan on a medium heat with Â½ a tablespoon of olive oil until golden and cooked through, tossing regularly, then turn the heat off.</p></li>
 <li><p>Finely chop the parsley, stalks and all, beat it with the egg and a splash of pasta cooking water, then finely grate and mix in most of the Parmesan.</p></li>
 <li><p>Toss the drained pasta into the sausage pan, pour in the egg mixture, and toss for 1 minute off the heat (the egg will gently cook in the residual heat). Loosen with a good splash of reserved cooking water, season to perfection with sea salt and pepper, and finely grate over the remaining Parmesan.</p></li>
 </ol>
 </div>
 <div id="source" class="section level3">
 <h3>Source</h3>
+<p>Jamie Oliver 5 Ingredients</p>
 <p><a href="https://www.youtube.com/watch?v=sEkUvKYC_Uk&amp;t=891s" class="uri">https://www.youtube.com/watch?v=sEkUvKYC_Uk&amp;t=891s</a></p>
+<p><a href="#top">Back to top</a></p>
+<hr />
 </div>
 </div>
-<div id="title-1" class="section level1">
-<h1>Title 1</h1>
-<p>Hello, World!</p>
-<div id="title-2" class="section level2">
-<h2>Title 2</h2>
-<p>Hello, world</p>
-<div id="title-3" class="section level3">
-<h3>Title 3</h3>
-<p>Recipe</p>
+<div id="three-cup-chicken" class="section level2">
+<h2>Three cup chicken</h2>
+<!-- ```{r, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("images//threecupchicken.jpg") -->
+<!-- ``` -->
+<div id="ingredients-1" class="section level3">
+<h3>Ingredients</h3>
+<ul>
+<li>1 lb chicken drumsticks</li>
+<li>1 tablespoon baking soda, to tenderize the chicken, optional</li>
+<li>2 tablespoons dark sesame oil or toasted sesame oil</li>
+<li>2-inch piece old ginger, peeled and cut into thin pieces</li>
+<li>6 cloves garlic, peeled</li>
+<li>1 1/2 tablespoons soy sauce</li>
+<li>1 1/2 tablespoons dark sweet soy sauce (kecap manis)</li>
+<li>1 1/2 tablespoons Shaoxing wine</li>
+<li>A big bunch Thai basil leaves</li>
+</ul>
+</div>
+<div id="method-1" class="section level3">
+<h3>Method</h3>
+<ol style="list-style-type: decimal">
+<li><p>Cut the chicken into pieces and rub them with the baking soda. Set aside for 10 minutes before rinsing the chicken off with water. Make sure the baking soda is completely rinsed off. Pat dry the chicken pieces and set aside.</p></li>
+<li><p>Heat up a claypot on high heat and add the dark sesame oil. Add the ginger, garlic, and stir-fry until aromatic. Add in the chicken and do a few quick stirs. Add the soy sauce, dark sweet soy sauce, Shaoxing wine and continue to stir-fry the chicken. Cover the chicken and lower the heat and simmer for 5-10 minutes. Add the basil leaves and stir well with the chicken, dish out and serve immediately.</p></li>
+</ol>
+</div>
+<div id="cooks-notes" class="section level3">
+<h3>Cook’s Notes</h3>
+<ol style="list-style-type: decimal">
+<li>This recipe calls for dark sesame oil or toasted sesame oil, which is different from regular sesame oil. Dark sesame oil is a lot more expensive but the flavor is more intense and with a stronger toasted sesame fragrance.</li>
+<li>You can skip the first step of tenderizing the chicken with baking soda. I personally like it because it makes the chicken so tender.</li>
+<li>If you donâ€™t have a claypot, you can use a regular wok or pan to make this dish.</li>
+</ol>
+</div>
+<div id="source-1" class="section level3">
+<h3>Source</h3>
+<p><a href="http://rasamalaysia.com/three-cups-chicken-recipe/2/" class="uri">http://rasamalaysia.com/three-cups-chicken-recipe/2/</a></p>
+<p><a href="#top">Back to top</a></p>
+<hr />
+</div>
+</div>
+<div id="bok-choy-chicken" class="section level2">
+<h2>Bok Choy chicken</h2>
+<div id="ingredients-2" class="section level3">
+<h3>Ingredients</h3>
+<ul>
+<li>6 oz boneless and skinless chicken breast, cut into thin pieces</li>
+<li>2 tablespoons oil</li>
+<li>8 oz bok choy, sliced into pieces</li>
+<li>1 inch piece ginger, peeled and sliced into pieces</li>
+</ul>
+</div>
+<div id="marinade" class="section level3">
+<h3>Marinade</h3>
+<ul>
+<li>1/2 tablespoon soy sauce</li>
+<li>1/2 tablespoon cornstarch</li>
+</ul>
+</div>
+<div id="sauce" class="section level3">
+<h3>Sauce</h3>
+<ul>
+<li>1/2 heaping tablespoon oyster sauce</li>
+<li>2 tablespoons water</li>
+<li>1/4 teaspoon sesame oil</li>
+<li>3 dashes white pepper</li>
+<li>1 teaspoon wine</li>
+<li>1/2 teaspoon sugar</li>
+</ul>
+</div>
+<div id="method-2" class="section level3">
+<h3>Method</h3>
+<ol style="list-style-type: decimal">
+<li>Marinate the chicken with the ingredients in Marinade for 10 minutes. Combine all the ingredients in the Sauce in a small bowl, stir to blend well.</li>
+<li>Heat 1/2 tablespoon oil in a wok until the oil becomes hot. Add the chicken and quickly stir-fry until the surface of the chicken turn opaque or white. Dish out and set aside. This step seals in the juice in the chicken so the texture is tender and velvety smooth.</li>
+<li>Heat up the remaining oil in the wok until hot. Add the ginger into the wok and stir-fry until aromatic. Add the chicken back into the wok and do a few quick stirs. Add in the bok choy and stir to combine well. Transfer the sauce into the wok and continue to stir-fry until the bok choy is cooked but remain crisp. Do not overcook.</li>
+<li>Dish out and serve immediately with steamed white rice.</li>
+</ol>
+</div>
+<div id="source-2" class="section level3">
+<h3>Source</h3>
+<p><a href="http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/" class="uri">http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/</a></p>
+<p><a href="#top">Back to top</a></p>
+<hr />
+</div>
+<div id="ginger-and-shallot-chicken-beef-or-fish" class="section level3">
+<h3>Ginger and shallot chicken, beef or fish</h3>
+</div>
+<div id="ingredients-3" class="section level3">
+<h3>Ingredients</h3>
+<ul>
+<li>8 oz beef flap meat, beef tenderloin or beef flank steak, sliced</li>
+<li>2 tablespoons oil</li>
+<li>inch ginger, peeled and thinly shredded</li>
+<li>3 stalks scallions, cut into 2-inch lengths</li>
+<li>1 teaspoon cornstarch</li>
+</ul>
+</div>
+<div id="sauce-1" class="section level3">
+<h3>Sauce</h3>
+<ul>
+<li>1 tablespoon oyster sauce</li>
+<li>1 teaspoon Maggi seasoning</li>
+<li>1 teaspoon sesame oil</li>
+<li>4 tablespoons water</li>
+<li>1 teaspoon cornstarch</li>
+<li>1/2 tablespoons dry Sherry or Shaoxing wine, optional</li>
+<li>1 teaspoon sugar</li>
+<li>1/2 teaspoon salt</li>
+<li>3 dash white pepper powder</li>
+</ul>
+</div>
+<div id="method-3" class="section level3">
+<h3>Method</h3>
+<ol style="list-style-type: decimal">
+<li>Marinate sliced beef with the cornstarch for 10 minutes. Combine all the Sauce ingredients, mix well and set aside.</li>
+<li>In a wok, heat up the oil until very high heat, stir-fry shredded ginger until fragrant. Toss in beef slices and continue to stir-fry for a few minutes, or until beef is cooked. Add in the Sauce and stir-fry a couple of times or until the sauce thickens. All scallions, stir dish out and serve with steamed rice.</li>
+</ol>
+</div>
+<div id="source-3" class="section level3">
+<h3>Source</h3>
+<p><a href="http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/" class="uri">http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/</a></p>
+<p><a href="#top">Back to top</a></p>
+<hr />
+</div>
+</div>
+<div id="yings-emperor-chicken-rice" class="section level2">
+<h2>Ying’s Emperor chicken rice</h2>
+<p>Serve 4.</p>
+<div id="rice" class="section level3">
+<h3>Rice</h3>
+<ul>
+<li>4-small cup Jasmin rice</li>
+<li>Handful of black bean (optional)</li>
+</ul>
+</div>
+<div id="chicken-and-marinade" class="section level3">
+<h3>Chicken and marinade</h3>
+<ul>
+<li>500g chicken thigh fillet (diced into 2cm cubes)</li>
+<li>Shao Xing wine</li>
+<li>Ginger finely diced (or grated)</li>
+<li>Soy sauce</li>
+<li>Dark soy sauce (optional)</li>
+</ul>
+</div>
+<div id="pack-1" class="section level3">
+<h3>Pack 1</h3>
+<ul>
+<li>7 Shiitaki mushroom</li>
+<li>7 Chinese red dates</li>
+</ul>
+</div>
+<div id="pack-2" class="section level3">
+<h3>Pack 2</h3>
+<ul>
+<li>Handful of goji berries</li>
+<li>Handful of black fungus</li>
+</ul>
+</div>
+<div id="method-4" class="section level3">
+<h3>Method</h3>
+<ol style="list-style-type: decimal">
+<li>Night before or hours before: Immerse the black bean, Shiitake mushroom and red dates in water, keep the water</li>
+<li>Wash and cook the rice (add water from Step 1)</li>
+<li>Dice ginger</li>
+<li>Dice the chicken thighs and marinade it</li>
+<li>Clean up and cut Pack 1 into strips</li>
+<li>Put the chicken and Pack 1 into the rice cook (the rice should be 1/3 to half cooked now)</li>
+<li>Clean up the remaining</li>
+<li>Put Pack 2 into the rice cooker</li>
+</ol>
+</div>
+<div id="source-4" class="section level3">
+<h3>Source</h3>
+<p>A friend. Ying.</p>
+<p><a href="#top">Back to top</a></p>
+<hr />
+</div>
+</div>
+<div id="creamy-peri-peri-chicken-pasta-fettuccini" class="section level2">
+<h2>Creamy Peri-peri chicken pasta (fettuccini)</h2>
+<p><img src="images/test.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>Serve 4.</p>
+<div id="ingredients-4" class="section level3">
+<h3>Ingredients</h3>
+<ul>
+<li>5 tsp Olive oil</li>
+<li>1 Red onion, peeled, halved and sliced</li>
+<li>2 Garlic cloves, crushed</li>
+<li>500g Chicken fillets, thinly sliced</li>
+<li>1/3 Cup (60ml) Nandoâ€™s PERi-PERi Sauce</li>
+<li>1 Cup (250ml) cream</li>
+<li>250g Oven-roasted cherry tomatoes</li>
+<li>Salt and freshly milled black pepper</li>
+<li>500g Cooked pasta, such as, fettuccini, tagliatelle or papparadelle</li>
+</ul>
+</div>
+<div id="directions" class="section level3">
+<h3>Directions</h3>
+<ol style="list-style-type: decimal">
+<li>Heat the oil in a wok or wide frying pan. Add the onion and fry for 3-4 minutes. Stir in the garlic and fry for 1 minute.</li>
+<li>Add the chicken strips and stir fry on a high heat, for 3-5 minutes, to brown the chicken.</li>
+<li>Stir in the Nandoâ€™s PERi-PERi sauce and simmer for 1 minute, to reduce slightly.</li>
+<li>Stir in the cream and oven-roasted tomatoes and simmer for 5 minutes. Season with salt and pepper.</li>
+<li>Ladle over pasta and serve.</li>
+</ol>
+</div>
+<div id="source-5" class="section level3">
+<h3>Source</h3>
+<p><a href="http://www.nandos.com.au/recipes/recipe/detail?id=1128" class="uri">http://www.nandos.com.au/recipes/recipe/detail?id=1128</a></p>
+<p><a href="#top">Back to top</a></p>
 </div>
 </div>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 

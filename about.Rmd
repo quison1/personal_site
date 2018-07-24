@@ -1,5 +1,8 @@
 ---
 title: "About Me"
+output:
+  html_document:
+    theme: united
 ---
 
-About me.
+A lazy person, and geeky. 
