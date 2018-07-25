@@ -4,8 +4,12 @@ navbar:
   title: "Will's website"
   left:
     - text: "Home"
+      icon: fa-home
       href: index.html
     - text: "Bible Verse"
       href: bibleverse.html
     - text: "About Me"
       href: about.html
+  right:
+    - icon: fa-question fa-lg
+      href: https://example.com
