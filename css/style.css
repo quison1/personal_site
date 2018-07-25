@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie|Merienda');
+
+body {
+  margin-top: 25px;
+}
+
+h2 {
+  font-family: 'Merienda', cursive;
+}
+
+#display-verse-ref {
+  color:grey;
+  font-family: 'Merienda', cursive;
+}
+
+#new-verse {
+  margin-bottom: 25px;
+}
+
