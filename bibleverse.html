@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Bible Verse</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Will's website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+<li>
+  <a href="bibleverse.html">Bible Verse</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Bible Verse</h1>
+
+</div>
+
+
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<script>
+      var data = [{"x":4.2731,"y":-41.9637,"group":"group 1"},{"x":7.0919,"y":185.7554,"group":"group 1"},{"x":0.2521,"y":-128.3087,"group":"group 2"},{"x":3.148,"y":67.5634,"group":"group 2"},{"x":9.2049,"y":439.763,"group":"group 2"},{"x":1.3713,"y":-20.903,"group":"group 3"},{"x":0.0831,"y":-64.0847,"group":"group 1"},{"x":0.1998,"y":-196.1553,"group":"group 3"},{"x":9.8029,"y":279.9996,"group":"group 3"},{"x":5.6917,"y":59.7468,"group":"group 2"},{"x":2.0504,"y":-47.5209,"group":"group 1"},{"x":0.5306,"y":74.4821,"group":"group 3"},{"x":3.5125,"y":54.7543,"group":"group 2"},{"x":0.767,"y":106.1036,"group":"group 1"},{"x":1.5374,"y":-122.006,"group":"group 2"},{"x":4.0573,"y":59.8869,"group":"group 3"},{"x":8.8548,"y":137.9055,"group":"group 3"},{"x":5.0644,"y":-72.6063,"group":"group 3"},{"x":4.2529,"y":-102.9403,"group":"group 2"},{"x":7.6535,"y":283.2335,"group":"group 2"},{"x":7.0415,"y":298.2541,"group":"group 1"},{"x":7.6021,"y":223.9468,"group":"group 2"},{"x":0.9995,"y":-24.3661,"group":"group 3"},{"x":8.5943,"y":242.6713,"group":"group 1"},{"x":5.961,"y":-19.0707,"group":"group 3"},{"x":2.8887,"y":-38.0419,"group":"group 2"},{"x":0.8459,"y":-187.0905,"group":"group 2"},{"x":9.0584,"y":350.5736,"group":"group 2"},{"x":0.9889,"y":125.476,"group":"group 3"},{"x":5.5817,"y":55.4623,"group":"group 3"},{"x":7.4938,"y":93.3422,"group":"group 2"},{"x":6.7648,"y":56.8007,"group":"group 1"},{"x":8.8542,"y":241.5365,"group":"group 2"},{"x":5.8996,"y":22.8777,"group":"group 3"},{"x":3.1402,"y":116.5094,"group":"group 1"},{"x":8.5089,"y":95.5327,"group":"group 3"},{"x":3.9152,"y":-12.6862,"group":"group 1"},{"x":9.4644,"y":275.4331,"group":"group 3"},{"x":5.3506,"y":-16.5781,"group":"group 3"},{"x":7.0215,"y":84.6233,"group":"group 1"},{"x":1.4472,"y":-14.1085,"group":"group 3"},{"x":6.6557,"y":173.642,"group":"group 1"},{"x":2.2013,"y":-209.5181,"group":"group 2"},{"x":4.4244,"y":52.8951,"group":"group 3"},{"x":6.5925,"y":18.5492,"group":"group 2"},{"x":8.8991,"y":364.0434,"group":"group 1"},{"x":7.3675,"y":219.9691,"group":"group 1"},{"x":4.7628,"y":42.6256,"group":"group 2"},{"x":8.8832,"y":306.8527,"group":"group 3"},{"x":7.9972,"y":171.3851,"group":"group 1"},{"x":3.6912,"y":-54.0213,"group":"group 1"},{"x":3.3595,"y":-2.2536,"group":"group 3"},{"x":8.1925,"y":203.2888,"group":"group 2"},{"x":1.3423,"y":56.0079,"group":"group 2"},{"x":0.3704,"y":-47.1605,"group":"group 2"},{"x":0.2224,"y":-60.626,"group":"group 1"},{"x":2.3785,"y":-36.983,"group":"group 2"},{"x":8.5001,"y":225.149,"group":"group 3"},{"x":3.5287,"y":-3.4297,"group":"group 2"},{"x":0.7372,"y":27.5193,"group":"group 1"},{"x":8.3032,"y":173.8704,"group":"group 2"},{"x":9.0062,"y":206.2539,"group":"group 1"},{"x":6.0713,"y":83.7457,"group":"group 2"},{"x":9.8215,"y":363.514,"group":"group 3"},{"x":1.0846,"y":40.9434,"group":"group 1"},{"x":2.0935,"y":-11.8171,"group":"group 1"},{"x":7.8598,"y":188.2979,"group":"group 2"},{"x":4.3682,"y":-50.0932,"group":"group 3"},{"x":5.97,"y":-105.6805,"group":"group 1"},{"x":3.235,"y":-63.9407,"group":"group 2"},{"x":9.3088,"y":146.9736,"group":"group 1"},{"x":4.0903,"y":-69.0729,"group":"group 2"},{"x":8.7262,"y":357.3287,"group":"group 2"},{"x":1.1538,"y":53.1959,"group":"group 3"},{"x":2.4181,"y":-172.7023,"group":"group 3"},{"x":6.2545,"y":117.5533,"group":"group 2"},{"x":0.3766,"y":-98.2982,"group":"group 2"},{"x":6.7664,"y":103.5483,"group":"group 1"},{"x":0.0283,"y":-57.5038,"group":"group 1"},{"x":2.7771,"y":-50.2183,"group":"group 3"},{"x":9.2223,"y":216.6961,"group":"group 3"},{"x":6.7121,"y":184.6682,"group":"group 3"},{"x":1.1751,"y":24.1321,"group":"group 2"},{"x":6.9871,"y":101.8215,"group":"group 2"},{"x":2.2884,"y":51.0624,"group":"group 2"},{"x":9.4782,"y":233.3861,"group":"group 3"},{"x":0.2123,"y":-21.5045,"group":"group 2"},{"x":3.5524,"y":23.1458,"group":"group 3"},{"x":9.6815,"y":358.5335,"group":"group 3"},{"x":9.3575,"y":334.2534,"group":"group 2"},{"x":6.5089,"y":74.8146,"group":"group 2"},{"x":7.7704,"y":131.6565,"group":"group 3"},{"x":0.0868,"y":47.7966,"group":"group 1"},{"x":6.9078,"y":-27.5745,"group":"group 3"},{"x":3.0906,"y":-85.3028,"group":"group 2"},{"x":6.6566,"y":36.5973,"group":"group 1"},{"x":2.1334,"y":63.2654,"group":"group 2"},{"x":0.0746,"y":-130.1691,"group":"group 1"},{"x":0.8799,"y":-53.8696,"group":"group 2"},{"x":5.7342,"y":87.3847,"group":"group 2"},{"x":9.2553,"y":284.8227,"group":"group 3"},{"x":0.4387,"y":-51.7057,"group":"group 3"},{"x":5.159,"y":12.4749,"group":"group 1"},{"x":3.5514,"y":153.5765,"group":"group 3"},{"x":7.1953,"y":366.3501,"group":"group 2"},{"x":1.0095,"y":-35.864,"group":"group 1"},{"x":2.2311,"y":152.6433,"group":"group 3"},{"x":0.393,"y":-97.9008,"group":"group 1"},{"x":3.3892,"y":8.3257,"group":"group 2"},{"x":9.0687,"y":259.5275,"group":"group 3"},{"x":7.8729,"y":166.1967,"group":"group 3"},{"x":9.9747,"y":346.3699,"group":"group 1"},{"x":2.5794,"y":-20.3632,"group":"group 1"},{"x":9.65,"y":361.8155,"group":"group 1"},{"x":8.8125,"y":255.5701,"group":"group 1"},{"x":2.9391,"y":-6.5652,"group":"group 2"},{"x":8.1413,"y":271.9217,"group":"group 3"},{"x":9.4916,"y":240.8536,"group":"group 1"},{"x":6.043,"y":94.368,"group":"group 2"},{"x":1.4469,"y":-7.9758,"group":"group 1"},{"x":0.0139,"y":81.9154,"group":"group 1"},{"x":0.2794,"y":51.3699,"group":"group 3"},{"x":4.6438,"y":14.9569,"group":"group 2"},{"x":3.9633,"y":64.5538,"group":"group 1"},{"x":0.471,"y":138.5699,"group":"group 2"},{"x":6.6154,"y":179.6887,"group":"group 3"},{"x":3.0651,"y":114.2907,"group":"group 1"},{"x":1.1532,"y":3.3365,"group":"group 1"},{"x":9.5846,"y":426.977,"group":"group 3"},{"x":9.0838,"y":309.3681,"group":"group 2"},{"x":5.2454,"y":73.4818,"group":"group 3"},{"x":6.6425,"y":146.6175,"group":"group 3"},{"x":5.5819,"y":150.5016,"group":"group 2"},{"x":2.5859,"y":59.4998,"group":"group 1"},{"x":0.0126,"y":-78.9081,"group":"group 2"},{"x":1.6349,"y":-60.0573,"group":"group 3"},{"x":2.5792,"y":-212.1852,"group":"group 1"},{"x":9.3805,"y":203.9033,"group":"group 2"},{"x":8.9278,"y":268.423,"group":"group 1"},{"x":1.1236,"y":37.5948,"group":"group 3"},{"x":0.5546,"y":-24.1424,"group":"group 3"},{"x":3.1376,"y":-66.2576,"group":"group 1"},{"x":1.1477,"y":59.7253,"group":"group 3"},{"x":0.755,"y":20.1187,"group":"group 1"},{"x":1.88,"y":67.3611,"group":"group 1"},{"x":5.0774,"y":31.416,"group":"group 2"},{"x":4.7648,"y":78.2361,"group":"group 3"},{"x":2.0928,"y":-0.3022,"group":"group 2"},{"x":8.8161,"y":253.4731,"group":"group 1"},{"x":5.4584,"y":39.0321,"group":"group 2"},{"x":2.616,"y":-35.6235,"group":"group 3"},{"x":6.755,"y":37.7228,"group":"group 1"},{"x":3.4416,"y":204.7426,"group":"group 3"},{"x":7.4969,"y":123.3183,"group":"group 2"},{"x":9.5184,"y":401.2817,"group":"group 1"},{"x":1.2729,"y":14.7384,"group":"group 3"},{"x":6.3864,"y":82.8347,"group":"group 1"},{"x":0.3487,"y":-73.5291,"group":"group 3"},{"x":5.7555,"y":-33.5024,"group":"group 2"},{"x":5.7433,"y":56.2131,"group":"group 2"},{"x":9.4301,"y":352.3482,"group":"group 1"},{"x":2.7507,"y":90.3269,"group":"group 1"},{"x":6.9622,"y":-54.3887,"group":"group 2"},{"x":6.2378,"y":114.0621,"group":"group 1"},{"x":5.1975,"y":95.9915,"group":"group 3"},{"x":6.82,"y":201.9425,"group":"group 3"},{"x":9.9722,"y":295.852,"group":"group 3"},{"x":7.8438,"y":110.6405,"group":"group 2"},{"x":1.4203,"y":189.5216,"group":"group 1"},{"x":0.4173,"y":-159.6753,"group":"group 2"},{"x":1.9033,"y":-7.2349,"group":"group 2"},{"x":7.8924,"y":222.6038,"group":"group 1"},{"x":7.2454,"y":41.97,"group":"group 3"},{"x":1.0183,"y":13.7687,"group":"group 3"},{"x":0.1441,"y":-110.946,"group":"group 2"},{"x":9.1395,"y":318.2283,"group":"group 3"},{"x":6.761,"y":-17.6626,"group":"group 1"},{"x":2.3168,"y":42.1313,"group":"group 3"},{"x":9.3619,"y":242.6847,"group":"group 2"},{"x":5.6535,"y":119.7599,"group":"group 2"},{"x":7.9033,"y":150.2645,"group":"group 3"},{"x":4.369,"y":-129.3335,"group":"group 2"},{"x":2.3188,"y":-68.2634,"group":"group 2"},{"x":3.7997,"y":136.0372,"group":"group 2"},{"x":3.6709,"y":33.5604,"group":"group 1"},{"x":3.7445,"y":49.3849,"group":"group 2"},{"x":3.3423,"y":71.9305,"group":"group 2"},{"x":4.4618,"y":-61.8924,"group":"group 2"},{"x":2.2275,"y":-98.9732,"group":"group 3"},{"x":9.783,"y":383.6539,"group":"group 1"},{"x":9.7103,"y":275.3296,"group":"group 2"},{"x":9.3853,"y":297.5881,"group":"group 1"},{"x":5.1304,"y":25.7046,"group":"group 1"},{"x":6.1349,"y":142.786,"group":"group 3"},{"x":6.9369,"y":83.051,"group":"group 1"},{"x":1.668,"y":-31.3812,"group":"group 1"},{"x":0.5418,"y":-113.7703,"group":"group 1"},{"x":4.9864,"y":-9.4365,"group":"group 2"},{"x":2.6227,"y":-65.075,"group":"group 3"},{"x":9.4999,"y":342.0022,"group":"group 3"},{"x":7.3659,"y":93.4834,"group":"group 1"},{"x":4.4085,"y":119.7768,"group":"group 1"},{"x":6.0628,"y":216.0713,"group":"group 1"},{"x":2.4556,"y":80.7213,"group":"group 3"},{"x":4.9524,"y":101.779,"group":"group 3"},{"x":8.509,"y":249.0716,"group":"group 2"},{"x":9.5127,"y":358.8864,"group":"group 1"},{"x":9.0588,"y":300.1572,"group":"group 1"},{"x":1.4376,"y":12.6797,"group":"group 3"},{"x":2.3782,"y":32.8396,"group":"group 3"},{"x":1.2709,"y":16.875,"group":"group 3"},{"x":8.6986,"y":102.0087,"group":"group 2"},{"x":6.3527,"y":112.8382,"group":"group 2"},{"x":2.5783,"y":14.2131,"group":"group 1"},{"x":7.9129,"y":-47.7081,"group":"group 1"},{"x":2.6089,"y":-41.5618,"group":"group 3"},{"x":5.6646,"y":-27.0066,"group":"group 3"},{"x":9.5349,"y":379.0835,"group":"group 1"},{"x":9.9245,"y":201.5688,"group":"group 1"},{"x":3.4853,"y":15.0187,"group":"group 3"},{"x":2.3717,"y":1.7122,"group":"group 3"},{"x":9.7875,"y":418.287,"group":"group 1"},{"x":6.6931,"y":-4.7343,"group":"group 1"},{"x":8.2646,"y":154.2576,"group":"group 2"},{"x":6.419,"y":228.1441,"group":"group 3"},{"x":6.8471,"y":85.7079,"group":"group 2"},{"x":6.5494,"y":46.5109,"group":"group 3"},{"x":3.6555,"y":94.5559,"group":"group 3"},{"x":5.4751,"y":63.0678,"group":"group 1"},{"x":3.4572,"y":81.0297,"group":"group 2"},{"x":3.6419,"y":85.2381,"group":"group 3"},{"x":4.709,"y":12.9598,"group":"group 1"},{"x":9.7919,"y":311.1908,"group":"group 2"},{"x":4.3034,"y":128.7758,"group":"group 2"},{"x":1.2959,"y":-133.5341,"group":"group 2"},{"x":3.7836,"y":132.3652,"group":"group 1"},{"x":5.1367,"y":190.4154,"group":"group 3"},{"x":8.2788,"y":155.8605,"group":"group 3"},{"x":4.9223,"y":-26.1199,"group":"group 2"},{"x":8.8565,"y":308.1639,"group":"group 1"},{"x":6.2715,"y":16.6654,"group":"group 3"},{"x":9.9342,"y":443.3079,"group":"group 3"},{"x":1.2557,"y":-17.8233,"group":"group 3"},{"x":4.6638,"y":40.5641,"group":"group 3"},{"x":7.039,"y":98.0821,"group":"group 2"},{"x":9.3875,"y":299.3723,"group":"group 1"},{"x":4.3993,"y":97.7312,"group":"group 3"},{"x":7.254,"y":131.2746,"group":"group 2"},{"x":7.3951,"y":223.6868,"group":"group 1"},{"x":0.5629,"y":24.115,"group":"group 2"},{"x":8.5093,"y":21.819,"group":"group 1"},{"x":8.9275,"y":312.4396,"group":"group 3"},{"x":8.2301,"y":118.3444,"group":"group 3"},{"x":8.5838,"y":145.6937,"group":"group 3"},{"x":2.4226,"y":81.263,"group":"group 2"},{"x":6.2103,"y":-7.3889,"group":"group 2"},{"x":5.7769,"y":81.0668,"group":"group 1"},{"x":4.5556,"y":59.0492,"group":"group 2"},{"x":8.0106,"y":129.1124,"group":"group 1"},{"x":0.8673,"y":73.2245,"group":"group 2"},{"x":7.6198,"y":71.5995,"group":"group 1"},{"x":1.9878,"y":28.7184,"group":"group 3"},{"x":9.1139,"y":269.997,"group":"group 3"},{"x":0.8279,"y":95.8905,"group":"group 1"},{"x":0.1137,"y":45.1188,"group":"group 2"},{"x":1.5907,"y":-38.7576,"group":"group 3"},{"x":2.3493,"y":-19.1916,"group":"group 2"},{"x":8.1401,"y":42.5852,"group":"group 1"},{"x":0.2665,"y":137.7584,"group":"group 2"},{"x":7.7349,"y":173.8596,"group":"group 3"},{"x":8.5886,"y":171.4745,"group":"group 3"},{"x":4.4783,"y":48.1327,"group":"group 2"},{"x":8.6833,"y":126.7067,"group":"group 3"},{"x":9.6728,"y":281.934,"group":"group 3"},{"x":3.8577,"y":39.1695,"group":"group 2"},{"x":6.6253,"y":68.8718,"group":"group 2"},{"x":0.0171,"y":36.6998,"group":"group 1"},{"x":2.8086,"y":157.8918,"group":"group 1"},{"x":6.6091,"y":138.0806,"group":"group 1"},{"x":3.9203,"y":-82.7791,"group":"group 1"},{"x":1.0191,"y":5.5229,"group":"group 1"},{"x":4.2816,"y":152.4409,"group":"group 2"},{"x":1.2657,"y":196.6898,"group":"group 3"},{"x":9.7378,"y":323.1022,"group":"group 1"},{"x":7.0015,"y":89.5843,"group":"group 3"},{"x":8.2602,"y":170.2902,"group":"group 3"},{"x":8.1486,"y":136.2002,"group":"group 3"},{"x":1.2722,"y":-120.0071,"group":"group 3"},{"x":5.7501,"y":220.4311,"group":"group 1"},{"x":2.7643,"y":68.2905,"group":"group 2"},{"x":5.6201,"y":109.4517,"group":"group 1"},{"x":6.3807,"y":180.2379,"group":"group 2"},{"x":9.6222,"y":330.9236,"group":"group 2"},{"x":9.1803,"y":259.6982,"group":"group 2"},{"x":3.2506,"y":45.6696,"group":"group 2"},{"x":7.9981,"y":132.0252,"group":"group 2"},{"x":6.8848,"y":129.0177,"group":"group 3"},{"x":2.246,"y":22.6928,"group":"group 1"},{"x":4.7888,"y":80.5768,"group":"group 3"},{"x":2.5883,"y":-123.9149,"group":"group 1"}];
+    </script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<div id="viz">
+
+</div>
+<script type="text/javascript">
+
+
+var point_vals = d3.select("#viz").append("p").text("Mouseover some data!");
+
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $("#did-it-work").width();
+  
+// set the dimensions and margins of the graph
+var margin = 20,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+    
+// Find max data values
+var x_extent = d3.extent(data, d => d.x);
+var y_extent = d3.extent(data, d => d.y);
+
+// Set the scales 
+var x = d3.scaleLinear()
+  .domain(x_extent)
+  .range([0, width]);
+  
+var y = d3.scaleLinear()
+  .domain(y_extent)
+  .range([height, 0]);
+
+//Set up our SVG element
+var svg = d3.select("#viz").append("svg")
+    .attr("width", width + 2*margin)
+    .attr("height", height + 2*margin)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin + "," + margin + ")");
+
+var bounce_select = d3.transition()
+    .duration(1000)
+    .ease(d3.easeElastic.period(0.4));
+    
+// Add the scatterplot
+svg.selectAll(".dots")
+    .data(data)
+  .enter().append("circle")
+    .attr("class", "dots")
+    .attr("fill", d => d.group === "group 1"? "steelblue":"orangered")
+    .attr("fill-opacity", 0.3)
+    .attr("r", 5)
+    .attr("cx", d => x(d.x) )
+    .attr("cy", d => y(d.y) )
+    .on("mouseover", function(d){
+       d3.selectAll(".dots").attr("r", 5) //make sure all the dots are small
+       d3.select(this)
+        .transition(bounce_select)
+        .attr("r", 10);
+      
+       point_vals.text("X:" + d.x + " Y:" + d.y) //change the title of the graph to the datapoint
+    });
+    
+// Draw the axes    
+// Add the X Axis
+svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+// Add the Y Axis
+svg.append("g")
+    .call(d3.axisLeft(y));
+    
+
+</script>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="bibleverse_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
