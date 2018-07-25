@@ -39,7 +39,7 @@ Serve 1.
 
 Jamie Oliver 5 Ingredients
 
-2018. Replace the cheating Bolognese from the original 3 (2011-2013).
+Summer 2018. Replace the cheating Bolognese from the original 3 (2011-2013).
 
 
 <a href="#top">Back to top</a>
@@ -75,9 +75,8 @@ Jamie Oliver 5 Ingredients
 
 
 ### Source
-http://rasamalaysia.com/three-cups-chicken-recipe/2/
 
-Part of the original 3 (2011-2013). Inherited from a friend, Ming.
+Part of the original 3 (2011-2013). Inherited from a friend, M. Adopted from [Rasa Malaysia](http://rasamalaysia.com/three-cups-chicken-recipe/2/).
 
 <a href="#top">Back to top</a>
 
@@ -113,9 +112,7 @@ Part of the original 3 (2011-2013). Inherited from a friend, Ming.
 
 ### Source
 
-http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/
-
-Part of the original 3 (2011-2013). Inherited from a friend, Ming.
+Part of the original 3 (2011-2013). Inherited from a friend, M. Adopted from [Rasa Malaysia](http://rasamalaysia.com/bok-choy-chicken/2/).
 
 <a href="#top">Back to top</a>
 
@@ -146,9 +143,9 @@ Part of the original 3 (2011-2013). Inherited from a friend, Ming.
 2. In a wok, heat up the oil until very high heat, stir-fry shredded ginger until fragrant. Toss in beef slices and continue to stir-fry for a few minutes, or until beef is cooked. Add in the Sauce and stir-fry a couple of times or until the sauce thickens. All scallions, stir dish out and serve with steamed rice.
 
 ### Source
-http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/
 
-First venture. 2015.
+
+First venture. 2015. Adopted from [Rasa Malaysia](http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/).
 
 <a href="#top">Back to top</a>
 
@@ -182,9 +179,7 @@ Serve 4.
 
 ### Source
 
-http://www.nandos.com.au/recipes/recipe/detail?id=1128
-
-A friend's R birthday at 2016.
+A friend's R birthday at 2016. Adopted from [Nando's website](http://www.nandos.com.au/recipes/recipe/detail?id=1128).
 
 <a href="#top">Back to top</a>
 
@@ -225,7 +220,7 @@ Serve 4.
 
 ### Source
 
-A friend. Ying. Housewarming at 2017.
+A friend. Y. Housewarming at Winter 2017, Franklin.
 
 <a href="#top">Back to top</a>
 
@@ -234,6 +229,5 @@ A friend. Ying. Housewarming at 2017.
 ## To do list
 
 1. Update the serving size and change the quantity unit to metric system.
-2. 2018 dish - Ginger beef
-    - https://www.hellofresh.com.au/recipes/ginger-beef-stir-fry-5786ed37b2baafc45b8b4568
-3. 2018 dish
+2. 2018 dish - [Ginger beef](https://www.hellofresh.com.au/recipes/ginger-beef-stir-fry-5786ed37b2baafc45b8b4568)
+3. 2018 dish - Curry challenge

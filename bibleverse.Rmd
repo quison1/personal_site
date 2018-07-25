@@ -40,8 +40,8 @@ library(jsonlite)
 <button class="btn btn-info btn-sm" id="new-verse">Click to refresh</button>
 <br>
 <br>
-<p id="display-verse">placeholder</p>
-<p id="display-verse-ref">refholder</p>
+<p id="display-verse">js is not runned. Is it supported in your browser?</p>
+<p id="display-verse-ref"></p>
 
 ***
 

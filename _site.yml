@@ -7,5 +7,7 @@ navbar:
       href: index.html
     - text: "Bible Verse"
       href: bibleverse.html
+    - text: "JS plot"
+      href: javaplot.html
     - text: "About Me"
       href: about.html

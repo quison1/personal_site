@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Javascript plot</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Will's website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="bibleverse.html">Bible Verse</a>
+</li>
+<li>
+  <a href="javaplot.html">JS plot</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Javascript plot</h1>
+
+</div>
+
+
+<script>
+      var data = [{"x":3.1018,"y":84.35,"group":"group 1"},{"x":7.8009,"y":299.8272,"group":"group 1"},{"x":9.1278,"y":273.6657,"group":"group 2"},{"x":2.289,"y":80.3479,"group":"group 1"},{"x":1.8404,"y":-3.1625,"group":"group 1"},{"x":0.8691,"y":-8.0748,"group":"group 3"},{"x":7.8767,"y":92.0758,"group":"group 1"},{"x":8.2353,"y":73.7166,"group":"group 1"},{"x":2.0621,"y":-108.2204,"group":"group 1"},{"x":2.0172,"y":-137.3704,"group":"group 3"},{"x":4.1715,"y":4.242,"group":"group 3"},{"x":1.6855,"y":-94.4509,"group":"group 2"},{"x":4.2599,"y":-1.3618,"group":"group 2"},{"x":4.6193,"y":50.2404,"group":"group 2"},{"x":3.6201,"y":-86.2478,"group":"group 3"},{"x":2.9902,"y":137.5809,"group":"group 1"},{"x":4.4406,"y":131.5938,"group":"group 3"},{"x":8.5808,"y":105.2908,"group":"group 3"},{"x":7.8915,"y":283.7356,"group":"group 2"},{"x":0.0996,"y":-71.4554,"group":"group 2"},{"x":6.8689,"y":84.7936,"group":"group 2"},{"x":5.638,"y":180.011,"group":"group 3"},{"x":3.5912,"y":18.4021,"group":"group 1"},{"x":2.0574,"y":-76.1833,"group":"group 3"},{"x":4.7855,"y":55.1775,"group":"group 2"},{"x":9.0381,"y":351.3852,"group":"group 2"},{"x":6.2697,"y":-113.0699,"group":"group 2"},{"x":9.2343,"y":106.6699,"group":"group 1"},{"x":6.0328,"y":152.0393,"group":"group 1"},{"x":9.5576,"y":235.9622,"group":"group 2"},{"x":4.8154,"y":106.8051,"group":"group 3"},{"x":4.8793,"y":53.2184,"group":"group 3"},{"x":5.1166,"y":-70.142,"group":"group 2"},{"x":4.6276,"y":-7.9522,"group":"group 1"},{"x":8.9989,"y":212.6696,"group":"group 2"},{"x":5.0491,"y":63.8364,"group":"group 3"},{"x":4.5959,"y":-48.2023,"group":"group 2"},{"x":9.3345,"y":283.7974,"group":"group 1"},{"x":7.4204,"y":83.2481,"group":"group 2"},{"x":2.3289,"y":-69.3508,"group":"group 1"},{"x":0.2323,"y":65.5405,"group":"group 3"},{"x":7.277,"y":134.5961,"group":"group 3"},{"x":2.8188,"y":-218.0412,"group":"group 2"},{"x":2.068,"y":-62.3376,"group":"group 3"},{"x":6.2708,"y":97.5753,"group":"group 2"},{"x":1.1661,"y":-42.188,"group":"group 2"},{"x":8.1441,"y":271.269,"group":"group 1"},{"x":9.0962,"y":226.9325,"group":"group 1"},{"x":5.2262,"y":-64.6188,"group":"group 3"},{"x":8.1223,"y":209.0821,"group":"group 1"},{"x":7.7331,"y":80.6111,"group":"group 1"},{"x":4.1923,"y":109.6795,"group":"group 3"},{"x":3.5142,"y":-44.2922,"group":"group 1"},{"x":1.6602,"y":-9.291,"group":"group 2"},{"x":9.8502,"y":383.9662,"group":"group 1"},{"x":7.7586,"y":206.6121,"group":"group 3"},{"x":1.8322,"y":-139.064,"group":"group 2"},{"x":0.4953,"y":-45.1834,"group":"group 3"},{"x":6.2692,"y":49.8773,"group":"group 3"},{"x":8.4749,"y":223.6587,"group":"group 3"},{"x":8.5717,"y":259.4917,"group":"group 3"},{"x":7.2145,"y":96.535,"group":"group 1"},{"x":6.2871,"y":90.5966,"group":"group 1"},{"x":6.0528,"y":171.1314,"group":"group 2"},{"x":7.1078,"y":134.1317,"group":"group 1"},{"x":7.0783,"y":-44.2039,"group":"group 3"},{"x":1.5876,"y":1.7343,"group":"group 3"},{"x":4.7601,"y":53.7731,"group":"group 1"},{"x":8.4772,"y":65.8533,"group":"group 3"},{"x":2.4985,"y":142.2879,"group":"group 1"},{"x":7.8204,"y":41.7446,"group":"group 2"},{"x":4.3978,"y":-77.0283,"group":"group 1"},{"x":3.5613,"y":113.9608,"group":"group 2"},{"x":7.202,"y":42.8112,"group":"group 3"},{"x":3.8872,"y":20.5828,"group":"group 2"},{"x":9.0551,"y":194.3233,"group":"group 1"},{"x":1.5519,"y":-18.9452,"group":"group 2"},{"x":4.0737,"y":19.0633,"group":"group 3"},{"x":6.4154,"y":0.3504,"group":"group 3"},{"x":0.8955,"y":103.6565,"group":"group 1"},{"x":6.1639,"y":10.6711,"group":"group 1"},{"x":5.5215,"y":1.0156,"group":"group 2"},{"x":5.3616,"y":-35.9294,"group":"group 2"},{"x":6.5259,"y":94.9376,"group":"group 2"},{"x":8.5236,"y":323.0226,"group":"group 2"},{"x":0.9679,"y":22.0627,"group":"group 2"},{"x":3.3067,"y":-51.5432,"group":"group 3"},{"x":2.3284,"y":30.2802,"group":"group 3"},{"x":0.5672,"y":128.0603,"group":"group 3"},{"x":1.7396,"y":-44.7952,"group":"group 2"},{"x":9.8492,"y":256.4636,"group":"group 3"},{"x":3.9806,"y":56.7847,"group":"group 3"},{"x":9.9714,"y":265.0349,"group":"group 2"},{"x":4.4295,"y":103.9739,"group":"group 3"},{"x":8.9518,"y":287.8478,"group":"group 2"},{"x":1.0081,"y":-5.5249,"group":"group 2"},{"x":0.2715,"y":19.9611,"group":"group 1"},{"x":3.9345,"y":-15.6319,"group":"group 2"},{"x":3.9086,"y":27.1468,"group":"group 3"},{"x":1.5456,"y":-127.2946,"group":"group 2"},{"x":8.8155,"y":70.9971,"group":"group 1"},{"x":6.2041,"y":-17.5155,"group":"group 3"},{"x":0.7332,"y":36.349,"group":"group 1"},{"x":8.7231,"y":286.6445,"group":"group 3"},{"x":5.9472,"y":-19.4623,"group":"group 3"},{"x":8.1983,"y":185.5615,"group":"group 1"},{"x":3.3124,"y":-71.3604,"group":"group 2"},{"x":6.7719,"y":216.4595,"group":"group 2"},{"x":1.4963,"y":31.2934,"group":"group 2"},{"x":2.799,"y":58.6982,"group":"group 2"},{"x":2.6429,"y":-5.0163,"group":"group 3"},{"x":2.0256,"y":104.9028,"group":"group 1"},{"x":6.9802,"y":4.2754,"group":"group 1"},{"x":8.1021,"y":168.3577,"group":"group 3"},{"x":5.4842,"y":-71.6589,"group":"group 3"},{"x":0.0959,"y":78.3296,"group":"group 2"},{"x":9.2558,"y":259.2805,"group":"group 3"},{"x":8.1059,"y":29.0316,"group":"group 1"},{"x":9.7605,"y":388.5717,"group":"group 3"},{"x":8.3298,"y":138.9552,"group":"group 3"},{"x":8.1372,"y":92.1662,"group":"group 1"},{"x":0.9348,"y":-19.0717,"group":"group 2"},{"x":6.7347,"y":52.3179,"group":"group 3"},{"x":6.5844,"y":122.142,"group":"group 1"},{"x":3.7262,"y":76.6506,"group":"group 1"},{"x":6.2451,"y":-3.1678,"group":"group 2"},{"x":4.5621,"y":-4.2071,"group":"group 1"},{"x":2.7074,"y":-71.391,"group":"group 3"},{"x":3.9743,"y":-21.7124,"group":"group 1"},{"x":5.2372,"y":128.1453,"group":"group 2"},{"x":7.6135,"y":323.1914,"group":"group 1"},{"x":8.7068,"y":222.1705,"group":"group 2"},{"x":4.4252,"y":-23.5997,"group":"group 1"},{"x":7.5035,"y":135.731,"group":"group 2"},{"x":2.7053,"y":21.386,"group":"group 3"},{"x":8.9467,"y":164.3441,"group":"group 1"},{"x":9.0481,"y":341.3643,"group":"group 1"},{"x":7.1562,"y":179.8561,"group":"group 2"},{"x":0.3342,"y":-97.3412,"group":"group 3"},{"x":6.6769,"y":-15.1806,"group":"group 2"},{"x":7.768,"y":233.8657,"group":"group 1"},{"x":7.6232,"y":230.493,"group":"group 2"},{"x":5.288,"y":57.1714,"group":"group 2"},{"x":2.3388,"y":-35.0766,"group":"group 3"},{"x":3.3283,"y":119.8467,"group":"group 3"},{"x":2.3892,"y":-62.3091,"group":"group 3"},{"x":1.1555,"y":-20.0013,"group":"group 1"},{"x":2.4278,"y":-13.7102,"group":"group 1"},{"x":5.6611,"y":-10.7759,"group":"group 1"},{"x":4.0259,"y":132.3896,"group":"group 3"},{"x":4.3811,"y":62.6196,"group":"group 2"},{"x":0.0291,"y":53.0803,"group":"group 2"},{"x":0.0705,"y":-181.3058,"group":"group 1"},{"x":3.9597,"y":-49.077,"group":"group 1"},{"x":9.5923,"y":255.2447,"group":"group 1"},{"x":1.0813,"y":36.8456,"group":"group 2"},{"x":2.7867,"y":0.321,"group":"group 3"},{"x":6.2166,"y":107.3821,"group":"group 2"},{"x":4.6475,"y":36.2725,"group":"group 2"},{"x":9.6747,"y":324.3105,"group":"group 3"},{"x":0.7881,"y":112.4251,"group":"group 3"},{"x":0.6102,"y":111.5908,"group":"group 2"},{"x":9.6754,"y":379.0941,"group":"group 2"},{"x":6.4217,"y":80.1082,"group":"group 3"},{"x":1.027,"y":104.4732,"group":"group 1"},{"x":9.399,"y":310.4158,"group":"group 2"},{"x":0.1313,"y":-11.0748,"group":"group 1"},{"x":9.5524,"y":243.7801,"group":"group 1"},{"x":3.5599,"y":-63.394,"group":"group 2"},{"x":4.5485,"y":-62.7595,"group":"group 2"},{"x":4.5692,"y":69.6768,"group":"group 3"},{"x":6.5422,"y":8.5975,"group":"group 1"},{"x":7.5303,"y":102.946,"group":"group 3"},{"x":4.7452,"y":28.8901,"group":"group 2"},{"x":4.9887,"y":26.6861,"group":"group 2"},{"x":8.2184,"y":202.1713,"group":"group 1"},{"x":6.9035,"y":73.3786,"group":"group 2"},{"x":9.042,"y":356.2508,"group":"group 1"},{"x":0.6758,"y":-5.1518,"group":"group 1"},{"x":7.6213,"y":87.9271,"group":"group 2"},{"x":2.1131,"y":-44.5109,"group":"group 1"},{"x":0.1704,"y":-39.0918,"group":"group 2"},{"x":4.691,"y":99.2864,"group":"group 2"},{"x":0.3353,"y":-46.124,"group":"group 2"},{"x":7.6379,"y":136.5454,"group":"group 2"},{"x":8.7376,"y":233.927,"group":"group 2"},{"x":1.9931,"y":159.4979,"group":"group 3"},{"x":7.9663,"y":211.9174,"group":"group 3"},{"x":2.7889,"y":21.3546,"group":"group 2"},{"x":8.2211,"y":96.1383,"group":"group 3"},{"x":0.7178,"y":94.9439,"group":"group 3"},{"x":7.4086,"y":117.7983,"group":"group 1"},{"x":2.4386,"y":0.1273,"group":"group 1"},{"x":6.4626,"y":82.5773,"group":"group 3"},{"x":8.1323,"y":171.0819,"group":"group 3"},{"x":5.9879,"y":3.6383,"group":"group 1"},{"x":4.5061,"y":16.6346,"group":"group 1"},{"x":1.499,"y":21.6008,"group":"group 3"},{"x":9.5302,"y":370.1015,"group":"group 3"},{"x":4.3907,"y":30.7476,"group":"group 1"},{"x":8.7563,"y":321.5285,"group":"group 1"},{"x":6.7473,"y":-144.9881,"group":"group 1"},{"x":3.246,"y":-81.716,"group":"group 3"},{"x":7.8791,"y":324.5128,"group":"group 2"},{"x":4.2131,"y":60.4867,"group":"group 2"},{"x":2.1449,"y":-53.8465,"group":"group 2"},{"x":0.1535,"y":86.4408,"group":"group 1"},{"x":8.1395,"y":228.0614,"group":"group 3"},{"x":9.8545,"y":369.2638,"group":"group 3"},{"x":9.5272,"y":242.6026,"group":"group 2"},{"x":3.3826,"y":9.4221,"group":"group 2"},{"x":1.3411,"y":13.0606,"group":"group 2"},{"x":4.5374,"y":8.9073,"group":"group 3"},{"x":1.5448,"y":-209.1695,"group":"group 1"},{"x":0.3367,"y":49.9979,"group":"group 1"},{"x":3.6714,"y":63.8324,"group":"group 3"},{"x":3.8961,"y":23.0447,"group":"group 2"},{"x":8.8141,"y":319.4997,"group":"group 1"},{"x":7.6032,"y":-9.0768,"group":"group 1"},{"x":6.3326,"y":195.6228,"group":"group 3"},{"x":4.8907,"y":52.3184,"group":"group 3"},{"x":3.6528,"y":-16.2805,"group":"group 2"},{"x":7.5307,"y":129.4387,"group":"group 2"},{"x":7.5261,"y":108.9104,"group":"group 1"},{"x":8.7618,"y":311.0131,"group":"group 3"},{"x":0.521,"y":24.9762,"group":"group 1"},{"x":5.2884,"y":-101.5429,"group":"group 1"},{"x":3.6637,"y":-35.6329,"group":"group 1"},{"x":8.3337,"y":124.8187,"group":"group 2"},{"x":7.4373,"y":158.9307,"group":"group 3"},{"x":7.9188,"y":179.1027,"group":"group 1"},{"x":8.6821,"y":265.9964,"group":"group 1"},{"x":2.3627,"y":28.1115,"group":"group 1"},{"x":9.4361,"y":282.4632,"group":"group 2"},{"x":4.219,"y":79.0023,"group":"group 3"},{"x":5.6463,"y":131.7823,"group":"group 3"},{"x":6.165,"y":35.5088,"group":"group 1"},{"x":6.8807,"y":27.3886,"group":"group 2"},{"x":1.8618,"y":56.9326,"group":"group 2"},{"x":9.117,"y":197.3582,"group":"group 3"},{"x":6.7068,"y":190.2175,"group":"group 3"},{"x":9.5574,"y":289.5495,"group":"group 3"},{"x":5.8005,"y":-18.3325,"group":"group 2"},{"x":7.1033,"y":9.5391,"group":"group 2"},{"x":6.6514,"y":-28.7265,"group":"group 2"},{"x":5.7723,"y":68.9462,"group":"group 3"},{"x":3.3093,"y":27.6408,"group":"group 3"},{"x":3.0853,"y":211.1567,"group":"group 3"},{"x":2.4757,"y":-86.2432,"group":"group 3"},{"x":8.146,"y":260.8179,"group":"group 3"},{"x":5.3788,"y":21.0219,"group":"group 2"},{"x":2.5794,"y":-27.2572,"group":"group 3"},{"x":2.4082,"y":-51.5592,"group":"group 2"},{"x":6.9136,"y":-71.9524,"group":"group 3"},{"x":1.51,"y":53.2924,"group":"group 2"},{"x":7.2706,"y":183.3023,"group":"group 1"},{"x":8.85,"y":252.1598,"group":"group 3"},{"x":4.9658,"y":5.7177,"group":"group 3"},{"x":1.5366,"y":-48.5311,"group":"group 2"},{"x":1.7425,"y":68.1122,"group":"group 2"},{"x":6.8074,"y":55.8114,"group":"group 2"},{"x":3.1462,"y":14.1112,"group":"group 2"},{"x":1.3496,"y":-29.1773,"group":"group 1"},{"x":6.1102,"y":215.4171,"group":"group 3"},{"x":1.794,"y":-55.1746,"group":"group 1"},{"x":8.321,"y":261.9163,"group":"group 1"},{"x":7.5451,"y":33.3711,"group":"group 1"},{"x":2.3444,"y":2.3742,"group":"group 1"},{"x":4.0858,"y":57.6481,"group":"group 2"},{"x":3.4481,"y":28.3164,"group":"group 2"},{"x":1.5209,"y":98.2358,"group":"group 1"},{"x":0.3159,"y":-116.3771,"group":"group 1"},{"x":7.896,"y":19.3851,"group":"group 3"},{"x":5.1645,"y":109.8473,"group":"group 1"},{"x":4.7678,"y":224.6488,"group":"group 3"},{"x":5.5754,"y":28.603,"group":"group 1"},{"x":0.1931,"y":-51.1607,"group":"group 2"},{"x":7.274,"y":245.9593,"group":"group 1"},{"x":7.2626,"y":74.523,"group":"group 2"},{"x":6.2161,"y":33.0676,"group":"group 2"},{"x":3.3258,"y":72.3326,"group":"group 3"},{"x":2.5681,"y":-36.4909,"group":"group 2"},{"x":4.1004,"y":24.1124,"group":"group 2"},{"x":0.3582,"y":42.9364,"group":"group 1"},{"x":9.2921,"y":371.4956,"group":"group 2"},{"x":5.6848,"y":20.9392,"group":"group 1"},{"x":5.5763,"y":72.2219,"group":"group 3"},{"x":3.5514,"y":143.6921,"group":"group 3"},{"x":2.0551,"y":-60.6302,"group":"group 1"},{"x":6.9231,"y":94.3798,"group":"group 3"},{"x":2.4825,"y":68.4707,"group":"group 2"},{"x":0.026,"y":77.5365,"group":"group 1"},{"x":4.1703,"y":74.8875,"group":"group 2"},{"x":5.833,"y":-96.1648,"group":"group 1"},{"x":2.5024,"y":39.2945,"group":"group 2"},{"x":9.6701,"y":310.8219,"group":"group 3"},{"x":4.7029,"y":58.439,"group":"group 3"},{"x":5.6193,"y":113.5147,"group":"group 3"},{"x":4.5159,"y":-45.3905,"group":"group 2"},{"x":9.8382,"y":247.8107,"group":"group 3"}];
+    </script>
+<!-- part of the requirement for the javascipt to run -->
+<div id="did-it-work" class="section level2">
+<h2 id="did-it-work">Did it work?</h2>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<div id="viz">
+
+</div>
+<script type="text/javascript">
+var point_vals = d3.select("#viz").append("p").text("Mouseover some data!");
+
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $("#did-it-work").width();
+  
+// set the dimensions and margins of the graph
+var margin = 20,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+    
+// Find max data values
+var x_extent = d3.extent(data, d => d.x);
+var y_extent = d3.extent(data, d => d.y);
+
+// Set the scales 
+var x = d3.scaleLinear()
+  .domain(x_extent)
+  .range([0, width]);
+  
+var y = d3.scaleLinear()
+  .domain(y_extent)
+  .range([height, 0]);
+
+//Set up our SVG element
+var svg = d3.select("#viz").append("svg")
+    .attr("width", width + 2*margin)
+    .attr("height", height + 2*margin)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin + "," + margin + ")");
+
+var bounce_select = d3.transition()
+    .duration(1000)
+    .ease(d3.easeElastic.period(0.4));
+    
+// Add the scatterplot
+svg.selectAll(".dots")
+    .data(data)
+  .enter().append("circle")
+    .attr("class", "dots")
+    .attr("fill", d => d.group === "group 1"? "steelblue":"orangered")
+    .attr("fill-opacity", 0.3)
+    .attr("r", 5)
+    .attr("cx", d => x(d.x) )
+    .attr("cy", d => y(d.y) )
+    .on("mouseover", function(d){
+       d3.selectAll(".dots").attr("r", 5) //make sure all the dots are small
+       d3.select(this)
+        .transition(bounce_select)
+        .attr("r", 10);
+      
+       point_vals.text("X:" + d.x + " Y:" + d.y) //change the title of the graph to the datapoint
+    });
+    
+// Draw the axes    
+// Add the X Axis
+svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+// Add the Y Axis
+svg.append("g")
+    .call(d3.axisLeft(y));
+</script>
+</div>
+<!-- part of the requirement for the javascipt to run -->
+<hr />
+<div id="source" class="section level2">
+<h2>Source</h2>
+<p>A <a href="https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/">great example</a> from Nick Strayer.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
