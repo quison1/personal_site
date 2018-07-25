@@ -3,6 +3,7 @@ title: "Bible Verse"
 output: html_document
 ---
 
+A random draw from my list of favourite Bible verses.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 

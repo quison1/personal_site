@@ -11,7 +11,7 @@
 
 
 
-<title>Bible Verse</title>
+<title>Ninja’s report</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -184,6 +184,9 @@ $(document).ready(function () {
   <a href="bibleverse.html">Bible Verse</a>
 </li>
 <li>
+  <a href="javaplot.html">JS plot</a>
+</li>
+<li>
   <a href="about.html">About Me</a>
 </li>
       </ul>
@@ -198,81 +201,35 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Bible Verse</h1>
+<h1 class="title toc-ignore">Ninja’s report</h1>
 
 </div>
 
 
-<p>A random draw from my list of favourite Bible verses.</p>
-<button class="btn btn-info btn-sm" id="new-verse">
-Click to refresh
-</button>
-<br> <br>
-<p id="display-verse">
-js is not runned. Is it supported in your browser?
-</p>
-<p id="display-verse-ref">
-</p>
-<hr />
-<p>A javascript script example with rmarkdown.</p>
-<p>To do:</p>
-<ol style="list-style-type: decimal">
-<li>Generalise the method to allow for website fetching js var data outside the index.js file</li>
-</ol>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials.js'></script>
-<script type="text/javascript">
-// background functions
-
-function inIframe () { try { return window.self !== window.top; } catch (e) { return true; } }
-
-function openURL(url){
-  window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
-}
-
-var strArray = ["apple", "orange", "juice"];
-
-// json object
-
-var objVerse = {
-  "verses":[{"content":"All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness, so that the servant of God may be thoroughly equipped for every good work.","ref":"2 Timothy 3:16-17"},{"content":"Hear, O Israel: The LORD our God, the LORD is one. Love the LORD your God with all your heart and with all your soul and with all your strength.","ref":"Deuteronomy 6:4-5"},{"content":"But he was pierced for our transgressions,<br>he was crushed for our iniquities;<br>the punishment that brought us peace was on him,<br>and by his wounds we are healed.","ref":"Isaiah 53.5"},{"content":"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.","ref":"John 3:16"},{"content":"The fear of the Lord is the beginning of knowledge,<br>    but fools despise wisdom and instruction.","ref":"Proverbs 1:7"},{"content":"As iron sharpens iron,<br>    so one person sharpens another.","ref":"Proverbs 27:17"},{"content":"The heavens declare the glory of God;<br>    the skies proclaim the work of his hands.<br>Day after day they pour forth speech;<br>    night after night they reveal knowledge.","ref":"Psalm 19:1-2"},{"content":"The Lord is my shepherd, I lack nothing.","ref":"Psalm 23:1"},{"content":"Teach us to number our days, that we may gain a heart of wisdom.","ref":"Psalm 90:12"},{"content":"For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.","ref":"Romans 6:23"},{"content":"And we know that in all things God works for the good of those who love him, who have been called according to his purpose.","ref":"Romans 8:28"},{"content":"I lift up my eyes to the mountains—<br>    where does my help come from?<br>My help comes from the Lord,<br>    the Maker of heaven and earth.","ref":"Psalm 121:1-2"},{"content":"Unless the Lord builds the house,<br>    the builders labor in vain.<br>Unless the Lord watches over the city,<br>    the guards stand watch in vain.","ref":"Psalm 127:1"},{"content":"In their hearts humans plan their course,<br>    but the Lord establishes their steps.","ref":"Proverbs 19:12"},{"content":"He has made everything beautiful in its time. He has also set eternity in the human heart; yet no one can fathom what God has done from beginning to end.","ref":"Ecclesiastes 3:11"}]
-};
-
-// specific functions
-
-function randomWholeBetween(a,b) {
-  return Math.floor(Math.random() * (b - a + 1) + a);
-}
-
-function randomVerse() {
-  var rnd = randomWholeBetween(0, objVerse.verses.length);
-  return objVerse.verses[rnd].content;
-}
-
-// 'meat'
-var currentVerse = '';
-var currentRef = '';
-
-function getVerse() {
-  var rnd = randomWholeBetween(0, objVerse.verses.length);
-  //return objVerse.verses[rnd].content;
-  
-  currentVerse = objVerse.verses[rnd].content;
-  currentRef = objVerse.verses[rnd].ref;
-  currentTweetURL = 'https://twitter.com/intent/tweet?hashtags=verse&related=bible&text=' + encodeURIComponent('"' + currentVerse + '" ' + currentRef);
-  
-  $("#display-verse").html(currentVerse);
-  $("#display-verse-ref").html(currentRef);
-  $("#tweet-verse").attr('href', currentTweetURL);
-}
-
-$(document).ready(function () {
-  getVerse();
-  $("#new-verse").on("click", getVerse);
-  //$("#tweet-verse").on("click", function() {
-  //  if(!inFrame()) {openURL(currentTweetURL);};});
-})
-</script>
+<p>My ninja’s report, i.e. my showcase:</p>
+<div id="section" class="section level3 tabset">
+<h3></h3>
+<div id="section-1" class="section level4">
+<h4>1</h4>
+<p>Kick ass 3D graph. Dimension is not working properly :(</p>
+<iframe height="500" src="https://plot.ly/~william.q.lim/257.embed">
+</iframe>
+</div>
+<div id="section-2" class="section level4">
+<h4>2</h4>
+<p>T-shirt design for a student activity, 2012. Front. Font credit goes to <a href="https://www.dafont.com/jenna-sue.font">Jenna Sue</a>. <img src="images/frontredfinal.jpg" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-3" class="section level4">
+<h4>3</h4>
+<p>T-shirt design for a student activity, 2012. Back. <img src="images/backredfinal.jpg" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-4" class="section level4">
+<h4>4</h4>
+<p>Nothing more to show. So. here is my favourite artist.</p>
+<iframe src="https://www.youtube.com/embed/HVbDD-IoHcU?showinfo=0" height="500" allowfullscreen>
+</iframe>
+</div>
+</div>
 
 
 
