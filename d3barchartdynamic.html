@@ -11,7 +11,7 @@
 
 
 
-<title>About Me</title>
+<title>d3barchart</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -208,21 +208,152 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About Me</h1>
+<h1 class="title toc-ignore">d3barchart</h1>
 
 </div>
 
 
-<p>A lazy person.</p>
-<div id="list-of-working-examples" class="section level4">
-<h4>List of working examples</h4>
-<ul>
-<li><a href="ninjareport.html">Ninja’s report</a></li>
-<li><a href="javaplot.html">Javascript plot example</a></li>
-<li><a href="d3barchart.html">D3 simple bar chart</a></li>
-<li><a href="d3tipbarchart.html">D3 simple bar chart with tooltip</a></li>
-</ul>
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
+
+</style>
+<!-- part of the requirement for the javascipt to run -->
+<div id="did-it-work" class="section level2">
+<h2 id="did-it-work">Did it work?</h2>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<div id="viz">
+
 </div>
+<pre class="js"><code>
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $(&quot;#did-it-work&quot;).width();
+  
+// set the dimensions and margins of the graph
+var margin = 40,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+
+//Set up our SVG element
+var svg = d3.select(&quot;#viz&quot;).append(&quot;svg&quot;)
+    .attr(&quot;width&quot;, width + 2*margin)
+    .attr(&quot;height&quot;, height + 2*margin)
+  .append(&quot;g&quot;)
+    .attr(&quot;transform&quot;,
+          &quot;translate(&quot; + margin + &quot;,&quot; + margin + &quot;)&quot;);
+
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+    y = d3.scaleLinear().rangeRound([height, 0]);
+
+var g = svg.append(&quot;g&quot;)
+    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
+
+d3.tsv(&quot;data.tsv&quot;, function(d) {
+  d.frequency = +d.frequency;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+  g.append(&quot;g&quot;)
+      .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
+      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
+      .call(d3.axisBottom(x));
+
+  g.append(&quot;g&quot;)
+      .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
+      .call(d3.axisLeft(y).ticks(10, &quot;%&quot;))
+    .append(&quot;text&quot;)
+      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
+      .attr(&quot;y&quot;, 6)
+      .attr(&quot;dy&quot;, &quot;0.71em&quot;)
+      .attr(&quot;text-anchor&quot;, &quot;end&quot;)
+      .text(&quot;Frequency&quot;);
+
+  g.selectAll(&quot;.bar&quot;)
+    .data(data)
+    .enter().append(&quot;rect&quot;)
+      .attr(&quot;class&quot;, &quot;bar&quot;)
+      .attr(&quot;x&quot;, function(d) { return x(d.letter); })
+      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })
+      .attr(&quot;width&quot;, x.bandwidth())
+      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });
+});
+</code></pre>
+<script type="text/javascript">
+
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $("#did-it-work").width();
+  
+// set the dimensions and margins of the graph
+var margin = 40,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+
+//Set up our SVG element
+var svg = d3.select("#viz").append("svg")
+    .attr("width", width + 2*margin)
+    .attr("height", height + 2*margin)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin + "," + margin + ")");
+
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+    y = d3.scaleLinear().rangeRound([height, 0]);
+
+var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data.tsv", function(d) {
+  d.frequency = +d.frequency;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "%"))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Frequency");
+
+  g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.letter); })
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(d.frequency); });
+});
+
+</script>
+</div>
+<!-- part of the requirement for the javascipt to run -->
 
 
 

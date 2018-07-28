@@ -12,7 +12,9 @@ library(knitr)
 
 A lazy person.
 
-#### Other sites
+#### List of working examples
 
   - [Ninja's report](ninjareport.html)
   - [Javascript plot example](javaplot.html)
+  - [D3 simple bar chart](d3barchart.html)
+  - [D3 simple bar chart with tooltip](d3tipbarchart.html)

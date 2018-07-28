@@ -43,7 +43,7 @@ send_df_to_js(random_data)
 
 <div id="viz"></div> 
 
-```{js, echo=FALSE}
+```{js}
 var point_vals = d3.select("#viz").append("p").text("Mouseover some data!");
 
 //Get how wide our page is in pixels so we can draw our plot in it

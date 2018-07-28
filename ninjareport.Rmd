@@ -1,7 +1,6 @@
 ---
 title: "Ninja's report"
-output:
-  html_document:
+output: html_document
 ---
   
 ```{r setup, include=FALSE}
