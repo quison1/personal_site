@@ -18,3 +18,4 @@ A lazy person.
   - [Javascript plot example](javaplot.html)
   - [D3 simple bar chart](d3barchart.html)
   - [D3 simple bar chart with tooltip](d3tipbarchart.html)
+  - [Life expectancy](d3life.html)

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Life Expectancy</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Will's website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="bibleverse.html">Bible Verse</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://example.com">
+    <span class="fa fa-question fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Life Expectancy</h1>
+
+</div>
+
+
+<p><link rel="stylesheet" type="text/css" href="css/life.css" /></p>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/d3.js"></script>
+<script type="text/javascript" src="js/d3.time.js"></script>
+<script type="text/javascript" src="js/d3.csv.js"></script>
+<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-865100-8']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+</script>
+<p>People are living longer around the world, some more so than others. Select a region (as defined by World Bank) below to compare, or roll over to the graph to highlight countries. Copied from <a href="http://projects.flowingdata.com/life-expectancy/">flowingdata.com</a>.</p>
+<div id="filters" class="btn-group btn-group-justified">
+<p><a id="EAS" class="btn btn-default">East Asia &amp; Pacific</a> <a id="SAS" class="btn btn-default">South Asia</a> <a id="ECS" class="btn btn-default">Europe &amp; Central Asia</a> <a id="MEA" class="btn btn-default">Middle East &amp; North Africa</a> <a id="SSF" class="btn btn-default">Sub-Saharan Africa</a> <a id="LCN" class="btn btn-default">Latin America &amp; Caribbean</a> <a id="NAC" class="btn btn-default">North America</a></p>
+</div>
+<div id="blurb">
+<div id="default-blurb">
+<h2 id="world">World</h2>
+<p>The average life expectancy in the world in 2009 was 69 years.</p>
+</div>
+<div id="blurb-content">
+
+</div>
+</div>
+<div id="vis">
+
+</div>
+<pre class="js"><code>
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $(&quot;#vis&quot;).width();
+  
+// set the dimensions and margins of the graph
+var margin = 40,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+
+var regions = { &quot;SAS&quot;: &quot;South Asia&quot; , &quot;ECS&quot;: &quot;Europe and Central Asia&quot;, &quot;MEA&quot;: &quot;Middle East &amp; North Africa&quot;, &quot;SSF&quot;: &quot;Sub-Saharan Africa&quot;, &quot;LCN&quot;: &quot;Latin America &amp; Caribbean&quot;, &quot;EAS&quot;: &quot;East Asia &amp;amp; Pacific&quot;, &quot;NAC&quot;: &quot;North America&quot; },
+    w = width,
+    h = height,
+    margin = 30,
+    startYear = 1960, 
+    endYear = 2010,
+    startAge = 20,
+    endAge = 80,
+    y = d3.scale.linear().domain([endAge, startAge]).range([0 + margin, h - margin]),
+    x = d3.scale.linear().domain([1960, 2009]).range([0 + margin -5, w]),
+    years = d3.range(startYear, endYear);
+
+var vis = d3.select(&quot;#vis&quot;)
+    .append(&quot;svg:svg&quot;)
+    .attr(&quot;width&quot;, w)
+    .attr(&quot;height&quot;, h)
+    .append(&quot;svg:g&quot;)
+    // .attr(&quot;transform&quot;, &quot;translate(0, 600)&quot;);
+
+            
+var line = d3.svg.line()
+    .x(function(d,i) { return x(d.x); })
+    .y(function(d) { return y(d.y); });
+                    
+
+// Regions
+var countries_regions = {};
+d3.text(&#39;data/country-regions.csv&#39;, &#39;text/csv&#39;, function(text) {
+    var regions = d3.csv.parseRows(text);
+    for (i=1; i &lt; regions.length; i++) {
+        countries_regions[regions[i][0]] = regions[i][1];
+    }
+});
+
+var startEnd = {},
+    countryCodes = {};
+d3.text(&#39;data/life-expectancy-cleaned-all.csv&#39;, &#39;text/csv&#39;, function(text) {
+    var countries = d3.csv.parseRows(text);
+    
+    for (i=1; i &lt; countries.length; i++) {
+        var values = countries[i].slice(2, countries[i.length-1]);
+        var currData = [];
+        countryCodes[countries[i][1]] = countries[i][0];
+        
+        var started = false;
+        for (j=0; j &lt; values.length; j++) {
+            if (values[j] != &#39;&#39;) {
+                currData.push({ x: years[j], y: values[j] });
+            
+                if (!started) {
+                    startEnd[countries[i][1]] = { &#39;startYear&#39;:years[j], &#39;startVal&#39;:values[j] };
+                    started = true;
+                } else if (j == values.length-1) {
+                    startEnd[countries[i][1]][&#39;endYear&#39;] = years[j];
+                    startEnd[countries[i][1]][&#39;endVal&#39;] = values[j];
+                }
+                
+            }
+        }
+        vis.append(&quot;svg:path&quot;)
+            .data([currData])
+            .attr(&quot;country&quot;, countries[i][1])
+            .attr(&quot;class&quot;, countries_regions[countries[i][1]])
+            .attr(&quot;d&quot;, line)
+            .on(&quot;mouseover&quot;, onmouseover)
+            .on(&quot;mouseout&quot;, onmouseout);
+    }
+});  
+    
+vis.append(&quot;svg:line&quot;)
+    .attr(&quot;x1&quot;, x(1960))
+    .attr(&quot;y1&quot;, y(startAge))
+    .attr(&quot;x2&quot;, x(2009))
+    .attr(&quot;y2&quot;, y(startAge))
+    .attr(&quot;class&quot;, &quot;axis&quot;)
+
+vis.append(&quot;svg:line&quot;)
+    .attr(&quot;x1&quot;, x(startYear))
+    .attr(&quot;y1&quot;, y(startAge))
+    .attr(&quot;x2&quot;, x(startYear))
+    .attr(&quot;y2&quot;, y(endAge))
+    .attr(&quot;class&quot;, &quot;axis&quot;)
+            
+vis.selectAll(&quot;.xLabel&quot;)
+    .data(x.ticks(5))
+    .enter().append(&quot;svg:text&quot;)
+    .attr(&quot;class&quot;, &quot;xLabel&quot;)
+    .text(String)
+    .attr(&quot;x&quot;, function(d) { return x(d) })
+    .attr(&quot;y&quot;, h-10)
+    .attr(&quot;text-anchor&quot;, &quot;middle&quot;)
+
+vis.selectAll(&quot;.yLabel&quot;)
+    .data(y.ticks(4))
+    .enter().append(&quot;svg:text&quot;)
+    .attr(&quot;class&quot;, &quot;yLabel&quot;)
+    .text(String)
+    .attr(&quot;x&quot;, 0)
+    .attr(&quot;y&quot;, function(d) { return y(d) })
+    .attr(&quot;text-anchor&quot;, &quot;right&quot;)
+    .attr(&quot;dy&quot;, 3)
+            
+vis.selectAll(&quot;.xTicks&quot;)
+    .data(x.ticks(5))
+    .enter().append(&quot;svg:line&quot;)
+    .attr(&quot;class&quot;, &quot;xTicks&quot;)
+    .attr(&quot;x1&quot;, function(d) { return x(d); })
+    .attr(&quot;y1&quot;, y(startAge))
+    .attr(&quot;x2&quot;, function(d) { return x(d); })
+    .attr(&quot;y2&quot;, y(startAge)+7)
+    
+vis.selectAll(&quot;.yTicks&quot;)
+    .data(y.ticks(4))
+    .enter().append(&quot;svg:line&quot;)
+    .attr(&quot;class&quot;, &quot;yTicks&quot;)
+    .attr(&quot;y1&quot;, function(d) { return y(d); })
+    .attr(&quot;x1&quot;, x(1959.5))
+    .attr(&quot;y2&quot;, function(d) { return y(d); })
+    .attr(&quot;x2&quot;, x(1960))
+
+function onclick(d, i) {
+    var currClass = d3.select(this).attr(&quot;class&quot;);
+    if (d3.select(this).classed(&#39;selected&#39;)) {
+        d3.select(this).attr(&quot;class&quot;, currClass.substring(0, currClass.length-9));
+    } else {
+        d3.select(this).classed(&#39;selected&#39;, true);
+    }
+}
+
+function onmouseover(d, i) {
+    var currClass = d3.select(this).attr(&quot;class&quot;);
+    d3.select(this)
+        .attr(&quot;class&quot;, currClass + &quot; current&quot;);
+    
+    var countryCode = $(this).attr(&quot;country&quot;);
+    var countryVals = startEnd[countryCode];
+    var percentChange = 100 * (countryVals[&#39;endVal&#39;] - countryVals[&#39;startVal&#39;]) / countryVals[&#39;startVal&#39;];
+    
+    var blurb = &#39;&lt;h2&gt;&#39; + countryCodes[countryCode] + &#39;&lt;/h2&gt;&#39;;
+    blurb += &quot;&lt;p&gt;On average: a life expectancy of &quot; + Math.round(countryVals[&#39;startVal&#39;]) + &quot; years in &quot; + countryVals[&#39;startYear&#39;] + &quot; and &quot; + Math.round(countryVals[&#39;endVal&#39;]) + &quot; years in &quot; + countryVals[&#39;endYear&#39;] + &quot;, &quot;;
+    if (percentChange &gt;= 0) {
+        blurb += &quot;an increase of &quot; + Math.round(percentChange) + &quot; percent.&quot;
+    } else {
+        blurb += &quot;a decrease of &quot; + -1 * Math.round(percentChange) + &quot; percent.&quot;
+    }
+    blurb += &quot;&lt;/p&gt;&quot;;
+    
+    $(&quot;#default-blurb&quot;).hide();
+    $(&quot;#blurb-content&quot;).html(blurb);
+}
+function onmouseout(d, i) {
+    var currClass = d3.select(this).attr(&quot;class&quot;);
+    var prevClass = currClass.substring(0, currClass.length-8);
+    d3.select(this)
+        .attr(&quot;class&quot;, prevClass);
+    // $(&quot;#blurb&quot;).text(&quot;hi again&quot;);
+    $(&quot;#default-blurb&quot;).show();
+    $(&quot;#blurb-content&quot;).html(&#39;&#39;);
+}
+
+function showRegion(regionCode) {
+    var countries = d3.selectAll(&quot;path.&quot;+regionCode);
+    if (countries.classed(&#39;highlight&#39;)) {
+        countries.attr(&quot;class&quot;, regionCode);
+    } else {
+        countries.classed(&#39;highlight&#39;, true);
+    }
+}
+</code></pre>
+<script type="text/javascript">
+
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $("#vis").width();
+  
+// set the dimensions and margins of the graph
+var margin = 40,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+
+var regions = { "SAS": "South Asia" , "ECS": "Europe and Central Asia", "MEA": "Middle East & North Africa", "SSF": "Sub-Saharan Africa", "LCN": "Latin America & Caribbean", "EAS": "East Asia &amp; Pacific", "NAC": "North America" },
+    w = width,
+    h = height,
+    margin = 30,
+    startYear = 1960, 
+    endYear = 2010,
+    startAge = 20,
+    endAge = 80,
+    y = d3.scale.linear().domain([endAge, startAge]).range([0 + margin, h - margin]),
+    x = d3.scale.linear().domain([1960, 2009]).range([0 + margin -5, w]),
+    years = d3.range(startYear, endYear);
+
+var vis = d3.select("#vis")
+    .append("svg:svg")
+    .attr("width", w)
+    .attr("height", h)
+    .append("svg:g")
+    // .attr("transform", "translate(0, 600)");
+
+            
+var line = d3.svg.line()
+    .x(function(d,i) { return x(d.x); })
+    .y(function(d) { return y(d.y); });
+                    
+
+// Regions
+var countries_regions = {};
+d3.text('data/country-regions.csv', 'text/csv', function(text) {
+    var regions = d3.csv.parseRows(text);
+    for (i=1; i < regions.length; i++) {
+        countries_regions[regions[i][0]] = regions[i][1];
+    }
+});
+
+var startEnd = {},
+    countryCodes = {};
+d3.text('data/life-expectancy-cleaned-all.csv', 'text/csv', function(text) {
+    var countries = d3.csv.parseRows(text);
+    
+    for (i=1; i < countries.length; i++) {
+        var values = countries[i].slice(2, countries[i.length-1]);
+        var currData = [];
+        countryCodes[countries[i][1]] = countries[i][0];
+        
+        var started = false;
+        for (j=0; j < values.length; j++) {
+            if (values[j] != '') {
+                currData.push({ x: years[j], y: values[j] });
+            
+                if (!started) {
+                    startEnd[countries[i][1]] = { 'startYear':years[j], 'startVal':values[j] };
+                    started = true;
+                } else if (j == values.length-1) {
+                    startEnd[countries[i][1]]['endYear'] = years[j];
+                    startEnd[countries[i][1]]['endVal'] = values[j];
+                }
+                
+            }
+        }
+        vis.append("svg:path")
+            .data([currData])
+            .attr("country", countries[i][1])
+            .attr("class", countries_regions[countries[i][1]])
+            .attr("d", line)
+            .on("mouseover", onmouseover)
+            .on("mouseout", onmouseout);
+    }
+});  
+    
+vis.append("svg:line")
+    .attr("x1", x(1960))
+    .attr("y1", y(startAge))
+    .attr("x2", x(2009))
+    .attr("y2", y(startAge))
+    .attr("class", "axis")
+
+vis.append("svg:line")
+    .attr("x1", x(startYear))
+    .attr("y1", y(startAge))
+    .attr("x2", x(startYear))
+    .attr("y2", y(endAge))
+    .attr("class", "axis")
+            
+vis.selectAll(".xLabel")
+    .data(x.ticks(5))
+    .enter().append("svg:text")
+    .attr("class", "xLabel")
+    .text(String)
+    .attr("x", function(d) { return x(d) })
+    .attr("y", h-10)
+    .attr("text-anchor", "middle")
+
+vis.selectAll(".yLabel")
+    .data(y.ticks(4))
+    .enter().append("svg:text")
+    .attr("class", "yLabel")
+    .text(String)
+    .attr("x", 0)
+    .attr("y", function(d) { return y(d) })
+    .attr("text-anchor", "right")
+    .attr("dy", 3)
+            
+vis.selectAll(".xTicks")
+    .data(x.ticks(5))
+    .enter().append("svg:line")
+    .attr("class", "xTicks")
+    .attr("x1", function(d) { return x(d); })
+    .attr("y1", y(startAge))
+    .attr("x2", function(d) { return x(d); })
+    .attr("y2", y(startAge)+7)
+    
+vis.selectAll(".yTicks")
+    .data(y.ticks(4))
+    .enter().append("svg:line")
+    .attr("class", "yTicks")
+    .attr("y1", function(d) { return y(d); })
+    .attr("x1", x(1959.5))
+    .attr("y2", function(d) { return y(d); })
+    .attr("x2", x(1960))
+
+function onclick(d, i) {
+    var currClass = d3.select(this).attr("class");
+    if (d3.select(this).classed('selected')) {
+        d3.select(this).attr("class", currClass.substring(0, currClass.length-9));
+    } else {
+        d3.select(this).classed('selected', true);
+    }
+}
+
+function onmouseover(d, i) {
+    var currClass = d3.select(this).attr("class");
+    d3.select(this)
+        .attr("class", currClass + " current");
+    
+    var countryCode = $(this).attr("country");
+    var countryVals = startEnd[countryCode];
+    var percentChange = 100 * (countryVals['endVal'] - countryVals['startVal']) / countryVals['startVal'];
+    
+    var blurb = '<h2>' + countryCodes[countryCode] + '</h2>';
+    blurb += "<p>On average: a life expectancy of " + Math.round(countryVals['startVal']) + " years in " + countryVals['startYear'] + " and " + Math.round(countryVals['endVal']) + " years in " + countryVals['endYear'] + ", ";
+    if (percentChange >= 0) {
+        blurb += "an increase of " + Math.round(percentChange) + " percent."
+    } else {
+        blurb += "a decrease of " + -1 * Math.round(percentChange) + " percent."
+    }
+    blurb += "</p>";
+    
+    $("#default-blurb").hide();
+    $("#blurb-content").html(blurb);
+}
+function onmouseout(d, i) {
+    var currClass = d3.select(this).attr("class");
+    var prevClass = currClass.substring(0, currClass.length-8);
+    d3.select(this)
+        .attr("class", prevClass);
+    // $("#blurb").text("hi again");
+    $("#default-blurb").show();
+    $("#blurb-content").html('');
+}
+
+function showRegion(regionCode) {
+    var countries = d3.selectAll("path."+regionCode);
+    if (countries.classed('highlight')) {
+        countries.attr("class", regionCode);
+    } else {
+        countries.classed('highlight', true);
+    }
+}
+
+</script>
+<pre class="js"><code>$(document).ready(function() {
+    $(&#39;#filters a&#39;).click(function() {
+        var countryId = $(this).attr(&quot;id&quot;);
+        $(this).toggleClass(countryId);
+        showRegion(countryId);
+    });
+    
+});</code></pre>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#filters a').click(function() {
+        var countryId = $(this).attr("id");
+        $(this).toggleClass(countryId);
+        showRegion(countryId);
+    });
+    
+});
+</script>
+<!-- part of the requirement for the javascipt to run -->
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
