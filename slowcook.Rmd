@@ -1,0 +1,44 @@
+---
+title: "Slow Cook"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+library(knitr)
+```
+
+## Pulled Pork
+
+Serve 6. Prep time 10 minutes. Cook time 8 hours.
+
+### Ingredients
+  - 1/2 cup of honey
+  - 3 tbsp. smoked paprika
+  - 2 tbsp. salt
+  - 2 tsp. ground black pepper
+  - 1 tsp. chilli powder
+  - 2 tsp. garlic powder
+  - 1 tsp. cumin
+  - 1/2 tsp. thyme
+  - 1/4 cup cider vinegar
+  - 3 tbsp. olive oil
+  - 2 medium onions, skin removed and halved
+  - 1 pork shoulder roast, about 1.5 kg
+
+### Instructions
+1.  In a medium size mixing bowl, with a fork mix together the honey, smoked paprika, salt, pepper, chilli powder, cumin, garlic powder, thyme, cider vinegar and olive oil until smooth.
+2.  Place the halved onion in the bottom of the slow cooker. Top it with the pork shoulder and pour the honey paste over the top and all sides of the roast. It's okay if some of it (or a lot of it) just drips off.
+3.  Turn the slow cooker to low and cook for 7 to 8 hours or until the meat is tender enough to be easily shredded with a fork.
+4.  Optional step: strain sauce into saucepan and bring to a boil on medium-high. Mix together 2 tbsp. each cornstarch and cold water. Stir into sauce and boil until thickened.
+5.  Refrigerate or freeze the leftovers.
+
+### Source
+
+A friend, R. [The Grey Bell](http://www.thegreybell.com/slow-cooker-pulled-pork/).
+
+<a href="#top">Back to top</a>

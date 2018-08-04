@@ -1,15 +1,25 @@
-name: "will-website"
+name: "personal-site"
 output_dir: "."
 navbar:
-  title: "Will's website"
+  title: "Q"
   left:
     - text: "Home"
       icon: fa-home
       href: index.html
+    - text: "Slow Cooking"
+      href: slowcook.html
+    - text: "Dessert"
+      href: dessert.html
     - text: "Bible Verse"
       href: bibleverse.html
-    - text: "About Me"
-      href: about.html
+    - text: "Examples"
+      href: misc.html
   right:
     - icon: fa-question fa-lg
-      href: https://example.com
+      href: about.html
+output:
+  html_document:
+    theme: united
+    include:
+      after_body: src/footer.html
+      

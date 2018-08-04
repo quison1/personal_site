@@ -1,0 +1,56 @@
+---
+title: "Examples"
+output: html_document
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+library(knitr)
+```
+
+### Tabbed content js {.tabset}
+Some examples of using javascript and d3 for my future reference.
+
+#### simple
+
+  - [js scatter plot](javaplot.html)
+  - [D3 simple bar chart](d3barchart.html)
+
+#### advanced
+  
+  - [D3 simple bar chart with tooltip](d3tipbarchart.html)
+  - [Life expectancy](d3life.html)
+  
+## 
+***
+  
+### Tabbed content embedded {.tabset}
+Some examples of using iframe to embed other contents.
+
+#### Youtube
+
+Here is my favourite artist.
+
+<iframe src="https://www.youtube.com/embed/HVbDD-IoHcU?showinfo=0" height="500" allowfullscreen>
+</iframe>
+
+#### Plotly example
+
+Here is a kick ass 3D graph.
+
+<iframe height="500" src="https://plot.ly/~william.q.lim/257.embed"></iframe>
+
+#### Static image 1
+
+T-shirt design for a student activity, 2012. Front. Font credit goes to [Jenna Sue](https://www.dafont.com/jenna-sue.font).
+```{r, out.width="100%", fig.align='center'}
+include_graphics("images//frontredfinal.jpg")
+```
+
+#### Static image 2
+
+T-shirt design for a student activity, 2012. Back.
+```{r, out.width="100%", fig.align='center'}
+include_graphics("images//backredfinal.jpg")
+```
+

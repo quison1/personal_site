@@ -11,7 +11,7 @@
 
 
 
-<title>d3barchart</title>
+<title>Dessert</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -164,6 +167,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -174,7 +272,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Will's website</a>
+      <a class="navbar-brand" href="index.html">Q</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -186,15 +284,21 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
+  <a href="slowcook.html">Slow Cooking</a>
+</li>
+<li>
+  <a href="dessert.html">Dessert</a>
+</li>
+<li>
   <a href="bibleverse.html">Bible Verse</a>
 </li>
 <li>
-  <a href="about.html">About Me</a>
+  <a href="misc.html">Examples</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://example.com">
+  <a href="about.html">
     <span class="fa fa-question fa-lg"></span>
      
   </a>
@@ -208,155 +312,21 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">d3barchart</h1>
+<h1 class="title toc-ignore">Dessert</h1>
 
 </div>
 
 
-<style>
+<div id="an-empty-list" class="section level2">
+<h2>An empty list</h2>
+<p>No acquired dessert recipe.</p>
+</div>
 
-.bar {
-  fill: steelblue;
-}
+<p>Copyright &copy; 2018. All rights reserved. Contents are sourced from various places. This is a personal project on learning how to build a website. No copyright infringement intended.</p>
 
-.bar:hover {
-  fill: brown;
-}
-
-.axis--x path {
-  display: none;
-}
-
-</style>
-<!-- part of the requirement for the javascipt to run -->
-<div id="did-it-work" class="section level2">
-<h2 id="did-it-work">Did it work?</h2>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<div id="viz">
 
 </div>
-<pre class="js"><code>
-//Get how wide our page is in pixels so we can draw our plot in it
-var page_width = $(&quot;#did-it-work&quot;).width();
-  
-// set the dimensions and margins of the graph
-var margin = 40,
-    width = page_width - 2*margin,
-    height = page_width*0.8 - 2*margin;
-
-//Set up our SVG element
-var svg = d3.select(&quot;#viz&quot;).append(&quot;svg&quot;)
-    .attr(&quot;width&quot;, width + 2*margin)
-    .attr(&quot;height&quot;, height + 2*margin)
-  .append(&quot;g&quot;)
-    .attr(&quot;transform&quot;,
-          &quot;translate(&quot; + margin + &quot;,&quot; + margin + &quot;)&quot;);
-
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-    y = d3.scaleLinear().rangeRound([height, 0]);
-
-var g = svg.append(&quot;g&quot;)
-    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
-
-d3.tsv(&quot;data.tsv&quot;, function(d) {
-  d.frequency = +d.frequency;
-  return d;
-}, function(error, data) {
-  if (error) throw error;
-
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-
-  g.append(&quot;g&quot;)
-      .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
-      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
-      .call(d3.axisBottom(x));
-
-  g.append(&quot;g&quot;)
-      .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
-      .call(d3.axisLeft(y).ticks(10, &quot;%&quot;))
-    .append(&quot;text&quot;)
-      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-      .attr(&quot;y&quot;, 6)
-      .attr(&quot;dy&quot;, &quot;0.71em&quot;)
-      .attr(&quot;text-anchor&quot;, &quot;end&quot;)
-      .text(&quot;Frequency&quot;);
-
-  g.selectAll(&quot;.bar&quot;)
-    .data(data)
-    .enter().append(&quot;rect&quot;)
-      .attr(&quot;class&quot;, &quot;bar&quot;)
-      .attr(&quot;x&quot;, function(d) { return x(d.letter); })
-      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })
-      .attr(&quot;width&quot;, x.bandwidth())
-      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });
-});
-</code></pre>
-<script type="text/javascript">
-
-//Get how wide our page is in pixels so we can draw our plot in it
-var page_width = $("#did-it-work").width();
-  
-// set the dimensions and margins of the graph
-var margin = 40,
-    width = page_width - 2*margin,
-    height = page_width*0.8 - 2*margin;
-
-//Set up our SVG element
-var svg = d3.select("#viz").append("svg")
-    .attr("width", width + 2*margin)
-    .attr("height", height + 2*margin)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin + "," + margin + ")");
-
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-    y = d3.scaleLinear().rangeRound([height, 0]);
-
-var g = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-d3.tsv("data.tsv", function(d) {
-  d.frequency = +d.frequency;
-  return d;
-}, function(error, data) {
-  if (error) throw error;
-
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-
-  g.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-  g.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(10, "%"))
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", "0.71em")
-      .attr("text-anchor", "end")
-      .text("Frequency");
-
-  g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("width", x.bandwidth())
-      .attr("height", function(d) { return height - y(d.frequency); });
-});
-
-</script>
 </div>
-<!-- part of the requirement for the javascipt to run -->
-
-
-
 
 </div>
 

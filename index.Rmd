@@ -5,7 +5,6 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-    theme: united
 ---
 
 ```{r setup, include=FALSE}
@@ -13,7 +12,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 library(knitr)
 ```
 
-# Personal recipe repository
+
 A quick compilation of my favour recipes. Sourced from various places. No copyright infringement intended.
 
 ***
@@ -41,6 +40,43 @@ Jamie Oliver 5 Ingredients
 
 Summer 2018. Replace the cheating Bolognese from the original 3 (2011-2013).
 
+<a href="#top">Back to top</a>
+
+***
+
+## Ginger beef stir-fry
+
+Serve 4.
+
+### Ingredients
+  - 2 knobs of ginger
+  - 2 clove garlic
+  - 2 long red chili
+  - 2 zucchini
+  - 400g snow peas
+  - 600g beef strips
+  - 2 tbs oyster sauce
+  - 4 tbs say sauce
+  - 6 cups water
+  - 4 tsp sugar
+  - 1/2 cup peanuts
+  
+### Instructions
+1.  To prepare the ingredients, peel and finely grate the ginger. Deseed and slice the long red chilli. Peel and crush the garlic. Rinse the Jasmine rice well. Slice the snow peas on the diagonal and finely slice the zucchini.
+
+2.  Place the beef strips in a medium bowl. Add in the ginger, long red chilli, garlic, and a dash of vegetable oil, and marinate for 10 minutes.
+
+3.  Place the Jasmine rice and water in a medium saucepan and bring to the boil. Cook for 10-12 minutes or until soft. Drain.
+
+4.  Heat a large wok or frying pan over a high heat. Add the marinated beef strips and cook for 2 minutes. Remove the beef from the pan and set aside. No need to clean the pan, just add in the oyster sauce, salt-reduced soy sauce, sugar, snow peas, zucchini and a splash of water and cook for 1-2 minutes or until the veggies are slightly soft. Remove the wok from the heat and stir through the beef.
+
+5.  Divide the Jasmine rice between bowls and serve with the saucy ginger beef stir fry.
+
+6. Divide the rice and the ginger beef stir-fry between bowls. Sprinkle over the peanuts.
+
+### Source
+
+A personal favourite. [Hello Fresh](https://www.hellofresh.com.au/recipes/ginger-beef-stir-fry-5786ed37b2baafc45b8b4568).
 
 <a href="#top">Back to top</a>
 
@@ -70,8 +106,10 @@ Summer 2018. Replace the cheating Bolognese from the original 3 (2011-2013).
 
 ### Cook's Notes
 1. This recipe calls for dark sesame oil or toasted sesame oil, which is different from regular sesame oil. Dark sesame oil is a lot more expensive but the flavor is more intense and with a stronger toasted sesame fragrance.
+
 2. 	You can skip the first step of tenderizing the chicken with baking soda. I personally like it because it makes the chicken so tender.
-3. If you don’t have a claypot, you can use a regular wok or pan to make this dish.
+
+3. If you don't have a claypot, you can use a regular wok or pan to make this dish.
 
 
 ### Source
@@ -84,11 +122,12 @@ Part of the original 3 (2011-2013). Inherited from a friend, M. Adopted from [Ra
 
 ## Bok Choy chicken
 
+Serve 2.
 
 ### Ingredients
-  -	6 oz boneless and skinless chicken breast, cut into thin pieces
+  -	180g boneless and skinless chicken breast, cut into thin pieces
   -	2 tablespoons oil
-  -	8 oz bok choy, sliced into pieces
+  -	220g bok choy, sliced into pieces
   -	1 inch piece ginger, peeled and sliced into pieces
 
 ### Marinade
@@ -106,8 +145,11 @@ Part of the original 3 (2011-2013). Inherited from a friend, M. Adopted from [Ra
 
 ### Method
 1. Marinate the chicken with the ingredients in Marinade for 10 minutes. Combine all the ingredients in the Sauce in a small bowl, stir to blend well.
+
 2. Heat 1/2 tablespoon oil in a wok until the oil becomes hot. Add the chicken and quickly stir-fry until the surface of the chicken turn opaque or white. Dish out and set aside. This step seals in the juice in the chicken so the texture is tender and velvety smooth.
+
 3. Heat up the remaining oil in the wok until hot. Add the ginger into the wok and stir-fry until aromatic. Add the chicken back into the wok and do a few quick stirs. Add in the bok choy and stir to combine well. Transfer the sauce into the wok and continue to stir-fry until the bok choy is cooked but remain crisp. Do not overcook.
+
 4. Dish out and serve immediately with steamed white rice.
 
 ### Source
@@ -118,10 +160,12 @@ Part of the original 3 (2011-2013). Inherited from a friend, M. Adopted from [Ra
 
 ***
 
-## Ginger and shallot chicken, beef or fish
+## Ginger and shallot beef
+
+Serve 2. Works with chicken breast or fish fillets.
 
 ### Ingredients
-  -	8 oz beef flap meat, beef tenderloin or beef flank steak, sliced
+  -	220g beef flap meat, beef tenderloin or beef flank steak, sliced
   -	2 tablespoons oil
   -	inch ginger, peeled and thinly shredded
   -	3 stalks scallions, cut into 2-inch lengths
@@ -140,10 +184,10 @@ Part of the original 3 (2011-2013). Inherited from a friend, M. Adopted from [Ra
 
 ### Method
 1. Marinate sliced beef with the cornstarch for 10 minutes. Combine all the Sauce ingredients, mix well and set aside.
+
 2. In a wok, heat up the oil until very high heat, stir-fry shredded ginger until fragrant. Toss in beef slices and continue to stir-fry for a few minutes, or until beef is cooked. Add in the Sauce and stir-fry a couple of times or until the sauce thickens. All scallions, stir dish out and serve with steamed rice.
 
 ### Source
-
 
 First venture. 2015. Adopted from [Rasa Malaysia](http://rasamalaysia.com/ginger-and-scallion-fish-recipe/2/).
 
@@ -151,7 +195,7 @@ First venture. 2015. Adopted from [Rasa Malaysia](http://rasamalaysia.com/ginger
 
 ***
 
-## Creamy Peri-peri chicken pasta
+## Creamy Peri-peri pasta
 
 ```{r, out.width="100%", fig.align='center'}
 include_graphics("images//test.jpg")
@@ -172,9 +216,13 @@ Serve 4.
 
 ### Directions
 1.	Heat the oil in a wok or wide frying pan. Add the onion and fry for 3-4 minutes. Stir in the garlic and fry for 1 minute. 
+
 2.	Add the chicken strips and stir fry on a high heat, for 3-5 minutes, to brown the chicken.
+
 3.	Stir in the Nando's PERi-PERi sauce and simmer for 1 minute, to reduce slightly.
+
 4.	Stir in the cream and oven-roasted tomatoes and simmer for 5 minutes. Season with salt and pepper.
+
 5.	Ladle over pasta and serve.
 
 ### Source
@@ -210,24 +258,32 @@ Serve 4.
 
 ### Method
 1.	Night before or hours before: Immerse the black bean, Shiitake mushroom and red dates in water, keep the water
+
 2.	Wash and cook the rice (add water from Step 1)
-3.	Dice ginger
-4.	Dice the chicken thighs and marinade it
-5.	Clean up and cut Pack 1 into strips
-6.	Put the chicken and Pack 1 into the rice cook (the rice should be 1/3 to half cooked now)
-7.	Clean up the remaining
-8.	Put Pack 2 into the rice cooker
+
+3.	Dice ginger, and then the chicken thighs and marinade it
+
+4.	Clean up and cut Pack 1 into strips
+5
+.	Put the chicken and Pack 1 into the rice cook (the rice should be 1/3 to half cooked now)
+
+6.	Clean up the remaining
+
+7.	Put Pack 2 into the rice cooker
 
 ### Source
 
-A friend. Y. Housewarming at Winter 2017, Franklin.
+A friend, Y. Housewarming at Winter 2017, Franklin.
 
 <a href="#top">Back to top</a>
+
+
+
+
 
 ***
 
 ## To do list
 
 1. Update the serving size and change the quantity unit to metric system.
-2. 2018 dish - [Ginger beef](https://www.hellofresh.com.au/recipes/ginger-beef-stir-fry-5786ed37b2baafc45b8b4568)
-3. 2018 dish - Curry challenge
+2. 2018 dish - Curry challenge
